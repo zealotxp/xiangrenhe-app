@@ -45,29 +45,8 @@
           <input class="inp" id="r4" value="1" inputmode="numeric">
         </div>
       </div>
-      <div class="field">
-        <label>适用场次</label>
-        <div class="chips" id="r5">
-          <span class="chip on">全部场次</span>
-          <span class="chip">仅总部直播</span>
-          <span class="chip">仅本市开播</span>
-        </div>
-      </div>
-      <div class="field">
-        <label>余额不足时的处理<em>*</em></label>
-        <div class="chips" id="r6">
-          <span class="chip on">扣至负数，后续充值自动抵扣</span>
-          <span class="chip">暂停发放</span>
-        </div>
-      </div>
       <button class="btn btn-primary btn-block" id="save">保存配置</button>
       <div class="tiny muted center" style="margin-top:8px">开播前完成设定，设定后长期有效，修改即时生效</div>
-    </div>
-
-    <div class="sec"><h2>补发与异常</h2></div>
-    <div class="list">
-      <div class="li"><div class="li-ico gold">补</div><div class="li-body"><div class="li-t">待补发名单</div><div class="li-s">12 人 · 因账户余额不足未发放</div></div><button class="btn btn-sm btn-gold" onclick="XRH.toast('已对 12 人发起补发')">一键补发</button></div>
-      <div class="li"><div class="li-ico gray">导</div><div class="li-body"><div class="li-t">发放明细导出</div><div class="li-s">支持按场次 / 按门店导出 Excel</div></div><span class="li-x">›</span></div>
     </div>
 
     <div class="sec"><h2>本月发放概览</h2></div>
@@ -75,7 +54,6 @@
       <div class="stats" style="margin-bottom:12px">
         <div class="stat"><b>4,218</b><span>发放人次</span></div>
         <div class="stat"><b>¥8,436</b><span>发放金额</span></div>
-        <div class="stat"><b>92%</b><span>签到率</span></div>
       </div>
       <div class="chart">
         <div class="c"><i style="height:52%"></i><span>09-12</span></div>
@@ -96,9 +74,6 @@
 
 <script src="assets/app.js"></script>
 <script>
-XRH.chips('#r5', true);
-XRH.chips('#r6', true);
-
 document.getElementById('save').onclick = function () {
   if (!document.getElementById('r1').value.trim() || !document.getElementById('r3').value.trim()) {
     XRH.toast('请填写达标时长与红包金额');
@@ -110,7 +85,7 @@ document.getElementById('save').onclick = function () {
       '<div class="mt">配置已保存</div>' +
       '<div class="ms">长沙市场：看播 ' + document.getElementById('r1').value + ' 分钟 + 签到 ' + document.getElementById('r2').value + ' 次 → 发放 ¥' + document.getElementById('r3').value + '</div></div>' +
       '<div class="modal-body"><div class="mk">生效范围</div>' +
-      '<ul><li>对本市（长沙市）全部绑定顾客生效</li><li>下一场开播即按新规则发放，已开播场次不受影响</li><li>账户余额不足时将按所选策略处理</li></ul></div>' +
+      '<ul><li>对本市（长沙市）全部绑定顾客生效</li><li>下一场开播即按新规则发放，已开播场次不受影响</li></ul></div>' +
       '<div class="modal-foot"><button class="btn btn-primary btn-block" data-close>知道了</button></div>'
   });
 };
