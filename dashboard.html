@@ -13,52 +13,10 @@
 
   <div class="page">
     <div class="scroll-x" id="roles">
-      <span class="chip" data-k="hq">总部</span>
       <span class="chip" data-k="province">省代</span>
       <span class="chip on" data-k="city">市代</span>
       <span class="chip" data-k="store">门店</span>
       <span class="chip" data-k="promoter">推广员</span>
-    </div>
-
-    <!-- 总部 -->
-    <div data-pane="hq" class="hide">
-      <div class="card dark">
-        <div class="row-b"><div class="h3" style="color:#fff">全平台概览</div><span class="tiny" style="color:rgba(255,255,255,.6)">数据截至 09-19 09:00</span></div>
-        <div class="stats" style="margin-top:12px;gap:8px">
-          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">28.6万</b><span style="color:rgba(255,255,255,.6)">会员总数</span></div>
-          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">860</b><span style="color:rgba(255,255,255,.6)">门店</span></div>
-          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">128</b><span style="color:rgba(255,255,255,.6)">直播场次</span></div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="h3">今日看播与发放</div>
-        <div class="stats" style="margin-top:10px">
-          <div class="stat"><b>3.2万</b><span>看播人次</span></div>
-          <div class="stat"><b>92%</b><span>签到率</span></div>
-          <div class="stat"><b>¥6.4万</b><span>红包发放</span></div>
-        </div>
-        <div class="chart" style="margin-top:14px">
-          <div class="c"><i style="height:60%"></i><span>09-15</span></div>
-          <div class="c"><i style="height:74%"></i><span>09-16</span></div>
-          <div class="c"><i style="height:52%"></i><span>09-17</span></div>
-          <div class="c"><i style="height:86%"></i><span>09-18</span></div>
-          <div class="c g"><i style="height:100%"></i><span>09-19</span></div>
-        </div>
-      </div>
-      <div class="sec"><h2>省代业绩排行</h2></div>
-      <div class="list">
-        <div class="li"><div class="li-ico gold">1</div><div class="li-body"><div class="li-t">湖南省</div><div class="li-s">门店 186 · 会员 6.2 万 · 本月成交 ¥860 万</div></div><span class="li-x">›</span></div>
-        <div class="li"><div class="li-ico">2</div><div class="li-body"><div class="li-t">广东省</div><div class="li-s">门店 152 · 会员 5.1 万 · 本月成交 ¥712 万</div></div><span class="li-x">›</span></div>
-        <div class="li"><div class="li-ico">3</div><div class="li-body"><div class="li-t">湖北省</div><div class="li-s">门店 118 · 会员 3.8 万 · 本月成交 ¥540 万</div></div><span class="li-x">›</span></div>
-      </div>
-      <div class="sec"><h2>总部后台入口</h2></div>
-      <div class="list">
-        <div class="li"><div class="li-ico">审</div><div class="li-body"><div class="li-t">门店申请审核</div><div class="li-s">待审核 12 条</div></div><span class="badge b-red">12</span></div>
-        <div class="li"><div class="li-ico blue">内</div><div class="li-body"><div class="li-t">内容管理</div><div class="li-s">资讯 / 产品 / 积分商城商品</div></div><span class="li-x">›</span></div>
-        <div class="li"><div class="li-ico gold">销</div><div class="li-body"><div class="li-t">营销配置</div><div class="li-s">红包全局规则 / 积分规则 / 奖项配置</div></div><span class="li-x">›</span></div>
-        <div class="li"><div class="li-ico gray">导</div><div class="li-body"><div class="li-t">数据导出</div><div class="li-s">各类报表导出 Excel</div></div><span class="li-x">›</span></div>
-        <div class="li"><div class="li-ico purple">域</div><div class="li-body"><div class="li-t">注册域名管理</div><div class="li-s">支持注册链接域名手动切换</div></div><span class="li-x">›</span></div>
-      </div>
     </div>
 
     <!-- 省代 -->
@@ -196,7 +154,7 @@ document.getElementById('roles').addEventListener('click', function (e) {
   if (!c) return;
   var k = c.getAttribute('data-k');
   for (var i = 0; i < panes.length; i++) panes[i].classList.toggle('hide', panes[i].getAttribute('data-pane') !== k);
-  var names = { hq: '总部', province: '湖南省代', city: '长沙市代', store: '仁和堂·雨花店', promoter: '推广员 王姐' };
+  var names = { province: '湖南省代', city: '长沙市代', store: '仁和堂·雨花店', promoter: '推广员 王姐' };
   document.querySelector('.nav .nav-sub').textContent = names[k] + ' · 仅查看自身及下级';
 });
 </script>
