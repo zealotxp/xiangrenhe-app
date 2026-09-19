@@ -155,6 +155,7 @@
       var chip = e.target.closest('.chip');
       if (!chip || !root.contains(chip)) return;
       var key = chip.getAttribute('data-k');
+      if (!key) return;               /* 无 data-k 的 chip 只作链接跳转，不参与面板切换 */
       var sib = root.querySelectorAll('.chip');
       for (var i = 0; i < sib.length; i++) sib[i].classList.remove('on');
       chip.classList.add('on');
