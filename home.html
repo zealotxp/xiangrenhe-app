@@ -12,31 +12,55 @@
   <div class="nav" data-nav data-title="湘仁禾" data-sub="长沙市场 · 会员中心" data-action="客服" data-action-href="settings.html"></div>
 
   <div class="page">
-    <!-- 会员身份卡 -->
-    <div class="card dark">
-      <div class="row">
-        <div class="avatar gold">李</div>
-        <div class="grow">
-          <div class="h3" style="color:#fff">李阿姨 <span class="badge b-gold" data-role>顾客</span></div>
-          <div class="tiny" style="color:rgba(255,255,255,.66);margin-top:2px" id="belong">归属：王姐 › 仁和堂健康生活馆（长沙雨花店）</div>
-        </div>
+
+    <!-- 搜索 -->
+    <div class="searchbar" id="searchBar">
+      <span class="s-ico"></span>
+      <span class="grow">搜索产品、直播、资讯</span>
+      <span class="s-btn">搜索</span>
+    </div>
+
+    <!-- ① 顶部 Banner 轮播 -->
+    <div class="banner" id="banner">
+      <div class="sl on" style="background:linear-gradient(140deg,#0E3A2F,#2A7A5C)" data-href="live-room.html">
+        <span class="deco"></span>
+        <span class="tag">直播进行中</span>
+        <h3>第 128 场<br>秋季养生专场</h3>
+        <p>看播满 30 分钟 · 签到 2 次即可领红包</p>
       </div>
-      <div class="row" style="margin-top:12px;gap:10px">
-        <div class="grow" style="text-align:center">
-          <div style="font-size:20px;font-weight:900;color:#E8CE8C" data-points>1260</div>
-          <div class="tiny" style="color:rgba(255,255,255,.6)">我的积分</div>
-        </div>
-        <div style="width:1px;height:30px;background:rgba(255,255,255,.16)"></div>
-        <div class="grow" style="text-align:center">
-          <div style="font-size:20px;font-weight:900;color:#E8CE8C">¥<span data-balance>38.60</span></div>
-          <div class="tiny" style="color:rgba(255,255,255,.6)">红包余额</div>
-        </div>
-        <div style="width:1px;height:30px;background:rgba(255,255,255,.16)"></div>
-        <div class="grow" style="text-align:center">
-          <div style="font-size:20px;font-weight:900;color:#E8CE8C">16</div>
-          <div class="tiny" style="color:rgba(255,255,255,.6)">已看直播</div>
-        </div>
+      <div class="sl" style="background:linear-gradient(140deg,#8A6416,#C89A34)" data-href="product-detail.html">
+        <span class="deco"></span>
+        <span class="tag">特膳食品</span>
+        <h3>改善记忆力<br>PS 复合特膳粉</h3>
+        <p>严选全球优质原料 · 专注身体亚健康调理</p>
       </div>
+      <div class="sl" style="background:linear-gradient(140deg,#8E2019,#C0342A)" data-href="scan.html">
+        <span class="deco"></span>
+        <span class="tag">一物一码</span>
+        <h3>扫码登记<br>积分抽奖两不误</h3>
+        <p>按产品金额 1:1 发放积分，再抽一次大奖</p>
+      </div>
+      <div class="dots" id="bannerDots"><i class="on"></i><i></i><i></i></div>
+    </div>
+
+    <!-- 会员资产条 -->
+    <div class="asset">
+      <a class="a" href="points.html">
+        <b class="gold" data-points>1260</b>
+        <span>我的积分</span>
+      </a>
+      <a class="a" href="wallet.html">
+        <b class="gold">¥<span data-balance>38.60</span></b>
+        <span>红包余额</span>
+      </a>
+      <a class="a" href="live.html">
+        <b class="green">16</b>
+        <span>已看直播</span>
+      </a>
+      <a class="a" href="promotion.html">
+        <b class="green">3</b>
+        <span>我的团队</span>
+      </a>
     </div>
 
     <!-- 未绑定推广员时的提示（原型演示用） -->
@@ -49,7 +73,7 @@
       <a class="btn btn-sm btn-red" href="register.html" style="flex:none">去绑定</a>
     </div>
 
-    <!-- 直播入口 -->
+    <!-- ② 直播入口一：正在直播 -->
     <div class="card live" id="liveCard">
       <div class="row-b">
         <div>
@@ -57,7 +81,7 @@
             <span class="badge" style="background:rgba(255,255,255,.22);color:#fff">直播中</span>
             <span class="h3" style="color:#fff">第 128 场 · 秋季养生专场</span>
           </div>
-          <div class="tiny" style="color:rgba(255,255,255,.7);margin-top:5px">19:30 已开播 · 全国会员同步观看 · 3,218 人在线</div>
+          <div class="tiny" style="color:rgba(255,255,255,.7);margin-top:5px">19:30 已开播 · 3,218 人在线</div>
         </div>
         <a class="btn btn-sm" style="background:#fff;color:#B02B24;flex:none" href="live-room.html">进入 ›</a>
       </div>
@@ -65,33 +89,7 @@
       <div class="tiny" style="color:rgba(255,255,255,.76);margin-top:6px">今日已看播 18 分钟 / 达标 30 分钟，签到 1/2 次</div>
     </div>
 
-    <!-- 今日任务 -->
-    <div class="sec"><h2>今日任务</h2><span class="more">每日 0 点刷新 · 1/3 已完成</span></div>
-    <div class="card">
-      <div class="row-b" style="padding:7px 0;border-bottom:1px solid var(--line)">
-        <div class="row">
-          <span class="check on">✓</span>
-          <div><div class="sm" style="font-weight:700">完成 1 次直播签到</div><div class="tiny muted">+10 积分 · 已完成 1/2</div></div>
-        </div>
-        <span class="badge b-green">已领</span>
-      </div>
-      <div class="row-b" style="padding:7px 0;border-bottom:1px solid var(--line)">
-        <div class="row">
-          <span class="check" id="tk1"></span>
-          <div><div class="sm" style="font-weight:700">累计看播满 30 分钟</div><div class="tiny muted">+20 积分 · 当前 18 分钟</div></div>
-        </div>
-        <a class="btn btn-sm btn-red" href="live-room.html">去观看</a>
-      </div>
-      <div class="row-b" style="padding:7px 0">
-        <div class="row">
-          <span class="check" id="tk2"></span>
-          <div><div class="sm" style="font-weight:700">扫码登记一盒产品</div><div class="tiny muted">按产品金额 1:1 发放积分</div></div>
-        </div>
-        <a class="btn btn-sm btn-gold" href="scan.html">去扫码</a>
-      </div>
-    </div>
-
-    <!-- 快捷入口 -->
+    <!-- ③ 功能 icon 九宫格 -->
     <div class="sec"><h2>常用功能</h2></div>
     <div class="card">
       <div class="grid3" style="gap:14px 8px">
@@ -134,8 +132,96 @@
       </div>
     </div>
 
-    <!-- 公司动态 -->
-    <div class="sec"><h2>公司动态</h2><a class="more" href="brand.html">全部 ›</a></div>
+    <!-- 今日任务 -->
+    <div class="sec"><h2>今日任务</h2><span class="more">每日 0 点刷新 · 1/3 已完成</span></div>
+    <div class="card">
+      <div class="row-b" style="padding:7px 0;border-bottom:1px solid var(--line)">
+        <div class="row">
+          <span class="check on">✓</span>
+          <div><div class="sm" style="font-weight:700">完成 1 次直播签到</div><div class="tiny muted">+10 积分 · 已完成 1/2</div></div>
+        </div>
+        <span class="badge b-green">已领</span>
+      </div>
+      <div class="row-b" style="padding:7px 0;border-bottom:1px solid var(--line)">
+        <div class="row">
+          <span class="check" id="tk1"></span>
+          <div><div class="sm" style="font-weight:700">累计看播满 30 分钟</div><div class="tiny muted">+20 积分 · 当前 18 分钟</div></div>
+        </div>
+        <a class="btn btn-sm btn-red" href="live-room.html">去观看</a>
+      </div>
+      <div class="row-b" style="padding:7px 0">
+        <div class="row">
+          <span class="check" id="tk2"></span>
+          <div><div class="sm" style="font-weight:700">扫码登记一盒产品</div><div class="tiny muted">按产品金额 1:1 发放积分</div></div>
+        </div>
+        <a class="btn btn-sm btn-gold" href="scan.html">去扫码</a>
+      </div>
+    </div>
+
+    <!-- ④ 直播入口二：预告与回放 -->
+    <div class="sec"><h2>直播预告与回放</h2><a class="more" href="live.html">全部 ›</a></div>
+    <div class="list" id="liveMore">
+      <div class="li">
+        <div class="li-ico red">预</div>
+        <div class="li-body">
+          <div class="li-t">第 129 场 · 冬季进补专场 <span class="badge b-red">预告</span></div>
+          <div class="li-s">09-22 19:30 开播 · 提前预约开播提醒</div>
+        </div>
+        <a class="btn btn-sm btn-red" href="live.html" style="flex:none">预约</a>
+      </div>
+      <div class="li">
+        <div class="li-ico blue">播</div>
+        <div class="li-body">
+          <div class="li-t">第 128 场回放 · 秋季养生专场</div>
+          <div class="li-s">时长 62 分钟 · 观看人数 3.6 万</div>
+        </div>
+        <a class="btn btn-sm btn-gold" href="live-replay.html" style="flex:none">回看</a>
+      </div>
+      <div class="li">
+        <div class="li-ico blue">播</div>
+        <div class="li-body">
+          <div class="li-t">第 127 场回放 · 中老年营养专场</div>
+          <div class="li-s">时长 55 分钟 · 观看人数 2.9 万</div>
+        </div>
+        <a class="btn btn-sm btn-gold" href="live-replay.html" style="flex:none">回看</a>
+      </div>
+    </div>
+
+    <!-- ⑤ 产品列表 -->
+    <div class="sec"><h2>热销推荐</h2><a class="more" href="mall.html">更多 ›</a></div>
+    <div class="goods">
+      <a class="g-c" href="product-detail.html">
+        <div class="ph">PS</div>
+        <div class="bd">
+          <div class="gt">PS 磷脂酰丝氨酸复合特膳粉</div>
+          <div class="gp">¥398 <span class="badge b-blue">记忆</span></div>
+        </div>
+      </a>
+      <a class="g-c" href="product.html">
+        <div class="ph gold">GA</div>
+        <div class="bd">
+          <div class="gt">γ-氨基丁酸（GABA）酸枣仁特膳饮</div>
+          <div class="gp">¥268 <span class="badge b-purple">睡眠</span></div>
+        </div>
+      </a>
+      <a class="g-c" href="product.html">
+        <div class="ph gold">参</div>
+        <div class="bd">
+          <div class="gt">人参枸杞黄精特膳饮</div>
+          <div class="gp">¥198 <span class="badge b-green">精气神</span></div>
+        </div>
+      </a>
+      <a class="g-c" href="product.html">
+        <div class="ph">芝</div>
+        <div class="bd">
+          <div class="gt">灵芝孢子油软胶囊</div>
+          <div class="gp">¥598 <span class="badge b-gold">礼盒</span></div>
+        </div>
+      </a>
+    </div>
+
+    <!-- ⑥ 公司新闻 -->
+    <div class="sec"><h2>公司新闻</h2><a class="more" href="brand.html">全部 ›</a></div>
     <div class="list">
       <a class="li" href="news-detail.html">
         <div class="li-ico gold">新</div>
@@ -153,6 +239,14 @@
         </div>
         <span class="li-x">›</span>
       </a>
+      <a class="li" href="news-detail.html">
+        <div class="li-ico green">产</div>
+        <div class="li-body">
+          <div class="li-t">PS 复合特膳粉新增 3 条自动化产线</div>
+          <div class="li-s">2026-08-27 · 一物一码追溯全覆盖</div>
+        </div>
+        <span class="li-x">›</span>
+      </a>
     </div>
 
   </div>
@@ -166,11 +260,41 @@ var u = XRH.user();
 if (!u.bind) {
   document.getElementById('unbindTip').classList.remove('hide');
   document.getElementById('liveCard').classList.add('hide');
+  document.getElementById('liveMore').classList.add('hide');
   document.querySelector('.nav .nav-sub').textContent = '未绑定推广员 · 仅公开内容';
-  document.getElementById('belong').textContent = '未绑定推广员 · 归属关系待确认';
 } else {
   document.querySelector('.nav .nav-sub').textContent = '长沙市场 · 已绑定 ' + u.promoter;
 }
+
+/* Banner 轮播：自动播放 + 点击圆点切换 + 点击整图跳转 */
+(function () {
+  var box = document.getElementById('banner');
+  var slides = box.querySelectorAll('.sl');
+  var dots = document.getElementById('bannerDots').children;
+  var idx = 0, timer = null;
+
+  function go(n) {
+    idx = (n + slides.length) % slides.length;
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].classList.toggle('on', i === idx);
+      dots[i].classList.toggle('on', i === idx);
+    }
+  }
+  function play() { stop(); timer = setInterval(function () { go(idx + 1); }, 3800); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  box.addEventListener('click', function (e) {
+    var d = e.target.closest ? e.target.closest('.dots i') : null;
+    if (d) { go(Array.prototype.indexOf.call(dots, d)); play(); return; }
+    var href = slides[idx].getAttribute('data-href');
+    if (href) location.href = href;
+  });
+  box.addEventListener('mouseenter', stop);
+  box.addEventListener('mouseleave', play);
+  play();
+})();
+
+document.getElementById('searchBar').onclick = function () { XRH.toast('搜索：产品 / 直播 / 资讯'); };
 document.getElementById('tk1').onclick = function () { XRH.toast('前往直播间继续观看'); };
 document.getElementById('tk2').onclick = function () { XRH.toast('打开扫码，扫描产品卡片二维码'); };
 </script>
