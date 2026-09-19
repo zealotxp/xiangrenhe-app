@@ -82,32 +82,6 @@
       </div>
     </div>
 
-    <!-- 今日任务 -->
-    <div class="sec"><h2>今日任务</h2><span class="more">每日 0 点刷新 · 1/3 已完成</span></div>
-    <div class="card">
-      <div class="row-b" style="padding:7px 0;border-bottom:1px solid var(--line)">
-        <div class="row">
-          <span class="check on">✓</span>
-          <div><div class="sm" style="font-weight:700">完成 1 次直播签到</div><div class="tiny muted">+10 积分 · 已完成 1/2</div></div>
-        </div>
-        <span class="badge b-green">已领</span>
-      </div>
-      <div class="row-b" style="padding:7px 0;border-bottom:1px solid var(--line)">
-        <div class="row">
-          <span class="check" id="tk1"></span>
-          <div><div class="sm" style="font-weight:700">累计看播满 30 分钟</div><div class="tiny muted">+20 积分 · 当前 18 分钟</div></div>
-        </div>
-        <a class="btn btn-sm btn-red" href="live-room.html">去观看</a>
-      </div>
-      <div class="row-b" style="padding:7px 0">
-        <div class="row">
-          <span class="check" id="tk2"></span>
-          <div><div class="sm" style="font-weight:700">扫码登记一盒产品</div><div class="tiny muted">按产品金额 1:1 发放积分</div></div>
-        </div>
-        <a class="btn btn-sm btn-gold" href="scan.html">去扫码</a>
-      </div>
-    </div>
-
     <!-- ④ 直播入口二：预告 -->
     <div class="sec"><h2>直播预告</h2><a class="more" href="live.html">全部 ›</a></div>
     <div class="list" id="liveMore">
@@ -232,9 +206,6 @@ if (!u.bind) {
   box.addEventListener('mouseleave', play);
   play();
 })();
-
-document.getElementById('tk1').onclick = function () { XRH.toast('前往直播间继续观看'); };
-document.getElementById('tk2').onclick = function () { XRH.toast('打开扫码，扫描产品卡片二维码'); };
 </script>
 </body>
 </html>
