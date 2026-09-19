@@ -15,18 +15,19 @@
 
     <!-- ① 顶部 Banner 轮播 -->
     <div class="banner" id="banner">
-      <div class="sl on" style="background:linear-gradient(140deg,#0E3A2F,#2A7A5C)" data-href="live-room.html">
+      <div class="sl on" style="background:linear-gradient(140deg,#0E3A2F,#2A7A5C)">
         <span class="deco"></span>
-        <span class="tag">直播进行中</span>
-        <h3>第 128 场<br>秋季养生专场</h3>
+        <span class="tag">品牌实力</span>
+        <h3>深耕大健康<br>二十余载</h3>
+        <p>严选全球优质原料 · 赋能千余家连锁门店</p>
       </div>
-      <div class="sl" style="background:linear-gradient(140deg,#8A6416,#C89A34)" data-href="product-detail.html">
+      <div class="sl" style="background:linear-gradient(140deg,#8A6416,#C89A34)">
         <span class="deco"></span>
         <span class="tag">特膳食品</span>
         <h3>改善记忆力<br>PS 复合特膳粉</h3>
         <p>严选全球优质原料 · 专注身体亚健康调理</p>
       </div>
-      <div class="sl" style="background:linear-gradient(140deg,#8E2019,#C0342A)" data-href="scan.html">
+      <div class="sl" style="background:linear-gradient(140deg,#8E2019,#C0342A)">
         <span class="deco"></span>
         <span class="tag">一物一码</span>
         <h3>扫码登记<br>积分抽奖两不误</h3>
@@ -178,7 +179,7 @@ if (!u.bind) {
   document.getElementById('liveMore').classList.add('hide');
 }
 
-/* Banner 轮播：自动播放 + 点击圆点切换 + 点击整图跳转 */
+/* Banner 轮播：自动播放 + 点击圆点切换（不跳转） */
 (function () {
   var box = document.getElementById('banner');
   var slides = box.querySelectorAll('.sl');
@@ -197,9 +198,7 @@ if (!u.bind) {
 
   box.addEventListener('click', function (e) {
     var d = e.target.closest ? e.target.closest('.dots i') : null;
-    if (d) { go(Array.prototype.indexOf.call(dots, d)); play(); return; }
-    var href = slides[idx].getAttribute('data-href');
-    if (href) location.href = href;
+    if (d) { go(Array.prototype.indexOf.call(dots, d)); play(); }
   });
   box.addEventListener('mouseenter', stop);
   box.addEventListener('mouseleave', play);
