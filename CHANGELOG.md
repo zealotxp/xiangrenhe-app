@@ -10,6 +10,19 @@
 
 ---
 
+## [1.0.1] - 2026-09-19
+
+### Added
+- scripts/release.sh 一键发布脚本：静态校验 → 提交 → 按 VERSION 打标签 → push --follow-tags
+- README 补充「版本与更新记录」章节，说明版本号判断规则与发布流程
+- 仓库根目录 .gh_token 存放 GitHub 令牌（已加入 .gitignore，不会提交），供发布脚本使用
+- .gitattributes 统一换行符为 LF，避免 Windows/跨平台 diff 噪音
+
+### Changed
+- 开启 GitHub Pages，在线预览地址 https://zealotxp.github.io/xiangrenhe-app/
+
+---
+
 ## [1.0.0] - 2026-09-19
 
 ### Added

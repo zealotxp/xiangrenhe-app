@@ -19,8 +19,32 @@
 assets/style.css    公共样式（改品牌色只需改 :root 变量）
 assets/app.js       公共脚本（状态栏/导航栏/底部 Tab/弹窗/Toast/本地演示状态）
 check_proto.py      静态校验（HTML 标签配平 + 站内链接检查）
-VERSION / CHANGELOG.md
+scripts/release.sh  一键发布（校验 → 提交 → 打标签 → 推送）
+VERSION             当前版本号（SemVer）
+CHANGELOG.md        更新记录
 ```
+
+## 版本与更新记录
+
+仓库地址：<https://github.com/zealotxp/xiangrenhe-app>
+在线预览：<https://zealotxp.github.io/xiangrenhe-app/>
+
+每次改代码的发布流程：
+
+1. 判断版本类型（SemVer）
+   - **MAJOR** 结构级变更：页面增删/路由重构/设计系统大改
+   - **MINOR** 新增页面或新增功能模块
+   - **PATCH** 样式、文案、交互细节修复
+2. 改 `VERSION` 文件
+3. 在 `CHANGELOG.md` 顶部新增 `## [X.Y.Z] - YYYY-MM-DD`，用 Added / Changed / Fixed 分组写清改动
+4. 执行发布脚本
+
+```bash
+bash scripts/release.sh "feat(home): 首页新增今日任务板块"
+```
+
+脚本会自动跑 `check_proto.py`，校验 VERSION 与 CHANGELOG 一致后提交、按 VERSION 打 `vX.Y.Z` 标签并 `push --follow-tags`。
+令牌存放在仓库根目录 `.gh_token`（已 gitignore，不会提交），也可直接用 `GH_TOKEN` 环境变量覆盖。
 
 ## 演示要点
 

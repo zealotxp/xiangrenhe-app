@@ -2,3 +2,6 @@
 Thumbs.db
 *.log
 __pycache__/
+
+# GitHub 令牌（本地保存，禁止提交）
+.gh_token
