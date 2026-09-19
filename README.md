@@ -2,11 +2,11 @@
 
 依据《湘仁禾私域会员APP开发需求方案 v1》制作的**多页面（MPA）静态原型**，纯原生 HTML / CSS / JS，无需构建工具，双击 `index.html` 即可在浏览器整站运行，页面之间为真实链接跳转。
 
-## 页面清单（26 个业务页 + 1 个总览）
+## 页面清单（25 个业务页 + 1 个总览）
 
 | 模块 | 页面 |
 |---|---|
-| 入口与归属 | `index.html` 启动登录、`register.html` 注册与归属、`store-apply.html` 门店申请、`invite.html` 推广码与邀请 |
+| 入口与归属 | `index.html` 启动登录、`store-apply.html` 门店申请、`invite.html` 推广码与邀请 |
 | 直播 | `live.html` 直播 Tab、`live-room.html` 直播间、`live-replay.html` 录播回放、`wallet.html` 我的红包、`redpacket-config.html` 市代红包配置 |
 | 商城与积分 | `mall.html` 商城 Tab、`product-detail.html` 产品详情、`brand.html` 企业介绍、`news.html` 公司新闻列表、`news-detail.html` 资讯详情、`points-mall.html` 积分商城、`points.html` 我的积分、`exchange.html` 兑换与收货地址 |
 | 一物一码 | `scan.html` 扫码、`lottery.html` 抽奖、`my-prizes.html` 中奖记录 |
