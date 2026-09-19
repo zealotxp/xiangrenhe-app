@@ -290,6 +290,7 @@ a.card{display:block}
 .stat b{display:block;font-size:18px;font-weight:800;letter-spacing:.4px}
 .stat span{font-size:11px;color:var(--ink3)}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
 .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 
 /* ---------- 表单 ---------- */
