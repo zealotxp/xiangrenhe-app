@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>数据看板 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="promotion.html" data-title="数据看板" data-sub="仅查看自身及下级数据"></div>
+
+  <div class="page">
+    <div class="scroll-x" id="roles">
+      <span class="chip" data-k="hq">总部</span>
+      <span class="chip" data-k="province">省代</span>
+      <span class="chip on" data-k="city">市代</span>
+      <span class="chip" data-k="store">门店</span>
+      <span class="chip" data-k="promoter">推广员</span>
+    </div>
+
+    <!-- 总部 -->
+    <div data-pane="hq" class="hide">
+      <div class="card dark">
+        <div class="row-b"><div class="h3" style="color:#fff">全平台概览</div><span class="tiny" style="color:rgba(255,255,255,.6)">数据截至 09-19 09:00</span></div>
+        <div class="stats" style="margin-top:12px;gap:8px">
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">28.6万</b><span style="color:rgba(255,255,255,.6)">会员总数</span></div>
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">860</b><span style="color:rgba(255,255,255,.6)">门店</span></div>
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">128</b><span style="color:rgba(255,255,255,.6)">直播场次</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="h3">今日看播与发放</div>
+        <div class="stats" style="margin-top:10px">
+          <div class="stat"><b>3.2万</b><span>看播人次</span></div>
+          <div class="stat"><b>92%</b><span>签到率</span></div>
+          <div class="stat"><b>¥6.4万</b><span>红包发放</span></div>
+        </div>
+        <div class="chart" style="margin-top:14px">
+          <div class="c"><i style="height:60%"></i><span>09-15</span></div>
+          <div class="c"><i style="height:74%"></i><span>09-16</span></div>
+          <div class="c"><i style="height:52%"></i><span>09-17</span></div>
+          <div class="c"><i style="height:86%"></i><span>09-18</span></div>
+          <div class="c g"><i style="height:100%"></i><span>09-19</span></div>
+        </div>
+      </div>
+      <div class="sec"><h2>省代业绩排行</h2></div>
+      <div class="list">
+        <div class="li"><div class="li-ico gold">1</div><div class="li-body"><div class="li-t">湖南省</div><div class="li-s">门店 186 · 会员 6.2 万 · 本月成交 ¥860 万</div></div><span class="li-x">›</span></div>
+        <div class="li"><div class="li-ico">2</div><div class="li-body"><div class="li-t">广东省</div><div class="li-s">门店 152 · 会员 5.1 万 · 本月成交 ¥712 万</div></div><span class="li-x">›</span></div>
+        <div class="li"><div class="li-ico">3</div><div class="li-body"><div class="li-t">湖北省</div><div class="li-s">门店 118 · 会员 3.8 万 · 本月成交 ¥540 万</div></div><span class="li-x">›</span></div>
+      </div>
+      <div class="sec"><h2>总部后台入口</h2></div>
+      <div class="list">
+        <div class="li"><div class="li-ico">审</div><div class="li-body"><div class="li-t">门店申请审核</div><div class="li-s">待审核 12 条</div></div><span class="badge b-red">12</span></div>
+        <div class="li"><div class="li-ico blue">内</div><div class="li-body"><div class="li-t">内容管理</div><div class="li-s">资讯 / 产品 / 积分商城商品</div></div><span class="li-x">›</span></div>
+        <div class="li"><div class="li-ico gold">销</div><div class="li-body"><div class="li-t">营销配置</div><div class="li-s">红包全局规则 / 积分规则 / 奖项配置</div></div><span class="li-x">›</span></div>
+        <div class="li"><div class="li-ico gray">导</div><div class="li-body"><div class="li-t">数据导出</div><div class="li-s">各类报表导出 Excel</div></div><span class="li-x">›</span></div>
+        <div class="li"><div class="li-ico purple">域</div><div class="li-body"><div class="li-t">注册域名管理</div><div class="li-s">支持注册链接域名手动切换</div></div><span class="li-x">›</span></div>
+      </div>
+    </div>
+
+    <!-- 省代 -->
+    <div data-pane="province" class="hide">
+      <div class="card dark">
+        <div class="row-b"><div class="h3" style="color:#fff">湖南省 · 省代看板</div><span class="tiny" style="color:rgba(255,255,255,.6)">线下签约 · 已缴保证金</span></div>
+        <div class="stats" style="margin-top:12px;gap:8px">
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">186</b><span style="color:rgba(255,255,255,.6)">门店</span></div>
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">1,240</b><span style="color:rgba(255,255,255,.6)">推广员</span></div>
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">6.2万</b><span style="color:rgba(255,255,255,.6)">顾客</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="h3">下辖市场（市）</div>
+        <div class="list" style="box-shadow:none;margin:10px 0 0">
+          <div class="li" style="padding:10px 0"><div class="li-ico">长</div><div class="li-body"><div class="li-t">长沙市</div><div class="li-s">门店 62 · 顾客 1.8 万 · 本月 ¥320 万</div></div><span class="li-x">›</span></div>
+          <div class="li" style="padding:10px 0"><div class="li-ico">株</div><div class="li-body"><div class="li-t">株洲市</div><div class="li-s">门店 38 · 顾客 1.1 万 · 本月 ¥186 万</div></div><span class="li-x">›</span></div>
+          <div class="li" style="padding:10px 0"><div class="li-ico">湘</div><div class="li-body"><div class="li-t">湘潭市</div><div class="li-s">门店 29 · 顾客 0.9 万 · 本月 ¥142 万</div></div><span class="li-x">›</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="h3">本月区域数据</div>
+        <div class="stats" style="margin-top:10px">
+          <div class="stat"><b>8.6万</b><span>看播人次</span></div>
+          <div class="stat"><b>¥17.2万</b><span>红包发放</span></div>
+          <div class="stat"><b>¥648万</b><span>成交（扫码反推）</span></div>
+        </div>
+        <div class="tiny muted" style="margin-top:9px">成交量通过一物一码扫码积分反推线下成交量</div>
+      </div>
+    </div>
+
+    <!-- 市代 -->
+    <div data-pane="city">
+      <div class="card dark">
+        <div class="row-b"><div class="h3" style="color:#fff">长沙市 · 市代看板</div><span class="tiny" style="color:rgba(255,255,255,.6)">刘建国</span></div>
+        <div class="stats" style="margin-top:12px;gap:8px">
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">62</b><span style="color:rgba(255,255,255,.6)">门店</span></div>
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">386</b><span style="color:rgba(255,255,255,.6)">推广员</span></div>
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">1.8万</b><span style="color:rgba(255,255,255,.6)">顾客</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="h3">本月看播与红包</div>
+        <div class="stats" style="margin-top:10px">
+          <div class="stat"><b>2.4万</b><span>看播人次</span></div>
+          <div class="stat"><b>¥8,436</b><span>红包发放</span></div>
+          <div class="stat"><b>¥320万</b><span>成交（反推）</span></div>
+        </div>
+        <div class="chart" style="margin-top:14px">
+          <div class="c"><i style="height:52%"></i><span>09-12</span></div>
+          <div class="c"><i style="height:68%"></i><span>09-13</span></div>
+          <div class="c"><i style="height:44%"></i><span>09-14</span></div>
+          <div class="c"><i style="height:88%"></i><span>09-15</span></div>
+          <div class="c g"><i style="height:100%"></i><span>09-18</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row-b">
+          <div><div class="h3">本市红包账户</div><div class="tiny muted" style="margin-top:3px">余额 ¥1,860.00 · 单场 ¥2.00</div></div>
+          <a class="btn btn-sm btn-gold" href="redpacket-config.html">配置</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="h3">收益数据</div>
+        <div class="row-b sm" style="padding:6px 0;border-bottom:1px solid var(--line)"><span class="muted">本月团队业绩</span><span>¥320 万</span></div>
+        <div class="row-b sm" style="padding:6px 0;border-bottom:1px solid var(--line)"><span class="muted">本月收益</span><span style="color:var(--red);font-weight:800">¥18.6 万</span></div>
+        <div class="row-b sm" style="padding:6px 0"><span class="muted">环比上月</span><span style="color:var(--green)">+12.4%</span></div>
+      </div>
+      <div class="tip">
+        <span>ⓘ</span>
+        <div>市代可<b>独立设定本市红包金额</b>并自行预充值；数据仅可查看本市及下级，不可越级。</div>
+      </div>
+    </div>
+
+    <!-- 门店 -->
+    <div data-pane="store" class="hide">
+      <div class="card dark">
+        <div class="row-b"><div class="h3" style="color:#fff">仁和堂健康生活馆（长沙雨花店）</div><span class="tiny" style="color:rgba(255,255,255,.6)">XRH-ST-1042</span></div>
+        <div class="stats" style="margin-top:12px;gap:8px">
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">12</b><span style="color:rgba(255,255,255,.6)">推广员</span></div>
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">486</b><span style="color:rgba(255,255,255,.6)">顾客</span></div>
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">96%</b><span style="color:rgba(255,255,255,.6)">签到率</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="h3">本店数据</div>
+        <div class="stats" style="margin-top:10px">
+          <div class="stat"><b>1,280</b><span>本月看播人次</span></div>
+          <div class="stat"><b>12.6万</b><span>会员积分</span></div>
+          <div class="stat"><b>¥86万</b><span>成交（反推）</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row-b"><div class="h3">门店推广码</div><a class="btn btn-sm btn-gold" href="invite.html">查看</a></div>
+        <div class="tiny muted" style="margin-top:6px">推广员扫码即绑定本店，顾客经推广员注册挂到本店名下</div>
+      </div>
+      <div class="sec"><h2>本店推广员</h2><a class="more" href="my-team.html">全部 ›</a></div>
+      <div class="list">
+        <div class="li"><div class="avatar sm gold">王</div><div class="li-body"><div class="li-t">王姐</div><div class="li-s">38 位顾客 · 本月 ¥26 万</div></div><span class="li-x">›</span></div>
+        <div class="li"><div class="avatar sm">李</div><div class="li-body"><div class="li-t">李医生</div><div class="li-s">26 位顾客 · 本月 ¥18 万</div></div><span class="li-x">›</span></div>
+      </div>
+    </div>
+
+    <!-- 推广员 -->
+    <div data-pane="promoter" class="hide">
+      <div class="card dark">
+        <div class="row-b"><div class="h3" style="color:#fff">推广员 · 王姐</div><span class="tiny" style="color:rgba(255,255,255,.6)">XRH-CS-0287 · 一级直推</span></div>
+        <div class="stats" style="margin-top:12px;gap:8px">
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">38</b><span style="color:rgba(255,255,255,.6)">直属顾客</span></div>
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">3</b><span style="color:rgba(255,255,255,.6)">今日新增</span></div>
+          <div class="stat" style="background:rgba(255,255,255,.1);box-shadow:none"><b style="color:#E8CE8C">¥26万</b><span style="color:rgba(255,255,255,.6)">本月业绩</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="h3">顾客看播情况</div>
+        <div class="bar" style="margin-top:10px"><i style="width:78%"></i></div>
+        <div class="tiny muted" style="margin-top:6px">38 位顾客中，30 位本月已达标看播（78%）</div>
+      </div>
+      <a class="btn btn-block btn-gold" href="invite.html">我的推广码 / 注册链接</a>
+      <a class="btn btn-block" href="my-team.html" style="margin-top:9px">查看我的顾客</a>
+      <div class="tip">
+        <span>ⓘ</span>
+        <div>推广权限<b>仅推广员（员工）</b>拥有，且<b>仅一级直推</b>；普通顾客无推广权限。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+XRH.tabs('#roles');
+var panes = document.querySelectorAll('[data-pane]');
+document.getElementById('roles').addEventListener('click', function (e) {
+  var c = e.target.closest('.chip');
+  if (!c) return;
+  var k = c.getAttribute('data-k');
+  for (var i = 0; i < panes.length; i++) panes[i].classList.toggle('hide', panes[i].getAttribute('data-pane') !== k);
+  var names = { hq: '总部', province: '湖南省代', city: '长沙市代', store: '仁和堂·雨花店', promoter: '推广员 王姐' };
+  document.querySelector('.nav .nav-sub').textContent = names[k] + ' · 仅查看自身及下级';
+});
+</script>
+</body>
+</html>

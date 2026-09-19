@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>原型总览 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="board">
+  <div class="board-head">
+    <h1>湘仁禾私域会员 APP · 前端静态原型总览</h1>
+    <p>依据《湘仁禾私域会员APP开发需求方案 v1》制作的多页面（MPA）原型。26 个业务页面 + 本总览页，纯原生 HTML/CSS/JS，双击 index.html 即可运行，页面之间为真实链接跳转。下方缩略图可点击文字标题进入对应页面。</p>
+    <div class="kpi">
+      <div><b>26</b>业务页面</div>
+      <div><b>5</b>功能模块</div>
+      <div><b>6</b>级角色体系</div>
+      <div><b>375×812</b>手机视口</div>
+    </div>
+  </div>
+
+  <div class="board-sec">
+    <h2>一、入口与归属</h2>
+    <p class="d">覆盖「注册流程 / 门店申请 / 归属关系绑定」：含是否绑定推广员的权限分支演示。</p>
+    <div class="grid">
+      <div class="thumb"><div class="cap">index.html <em>启动登录</em></div><div class="sub">微信授权 + 手机号验证码；经推广员链接进入即自动绑定归属</div><div class="frame"><iframe src="index.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">register.html <em>注册与归属</em></div><div class="sub">推广员链接落地页，归属链路预览与预注册</div><div class="frame"><iframe src="register.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">store-apply.html <em>门店申请</em></div><div class="sub">门店信息表单 + 审核进度（实体/虚拟门店均可）</div><div class="frame"><iframe src="store-apply.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">invite.html <em>推广码与邀请</em></div><div class="sub">门店推广码、会员注册链接、已绑定推广员列表</div><div class="frame"><iframe src="invite.html" loading="lazy"></iframe></div></div>
+    </div>
+  </div>
+
+  <div class="board-sec">
+    <h2>二、直播模块</h2>
+    <p class="d">私域直播（不带货）、防挂机签到、红包发放与市代配置；未绑定推广员时直播入口整体隐藏。</p>
+    <div class="grid">
+      <div class="thumb"><div class="cap">live.html <em>直播 Tab</em></div><div class="sub">直播中 / 预告 / 录播回放三档切换与互动能力</div><div class="frame"><iframe src="live.html?nopopup=1" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">live-room.html <em>直播间</em></div><div class="sub">看播计时、防挂机签到倒计时、红包领取、聊天抽奖</div><div class="frame"><iframe src="live-room.html?nopopup=1" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">live-replay.html <em>录播回放</em></div><div class="sub">回放播放器、章节列表、观看记录</div><div class="frame"><iframe src="live-replay.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">wallet.html <em>我的红包</em></div><div class="sub">红包余额、收入/支出明细、提现申请</div><div class="frame"><iframe src="wallet.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">redpacket-config.html <em>市代配置</em></div><div class="sub">本市红包金额、签到次数、账户充值与补发</div><div class="frame"><iframe src="redpacket-config.html" loading="lazy"></iframe></div></div>
+    </div>
+  </div>
+
+  <div class="board-sec">
+    <h2>三、商城与积分</h2>
+    <p class="d">产品展示中心（仅展示不销售）与积分商城（仅积分兑换）分开运营。</p>
+    <div class="grid">
+      <div class="thumb"><div class="cap">mall.html <em>商城 Tab</em></div><div class="sub">两个板块切换：产品展示中心 / 积分商城</div><div class="frame"><iframe src="mall.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">product.html <em>产品展示中心</em></div><div class="sub">分类筛选、商品卡、线下门店指引</div><div class="frame"><iframe src="product.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">product-detail.html <em>产品详情</em></div><div class="sub">规格参数、图文介绍、扫码登记引导</div><div class="frame"><iframe src="product-detail.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">brand.html <em>企业介绍</em></div><div class="sub">企业简介 / 公司荣誉 / 发展历程 / 公司动态</div><div class="frame"><iframe src="brand.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">news-detail.html <em>资讯详情</em></div><div class="sub">图文正文、本场数据、点赞分享</div><div class="frame"><iframe src="news-detail.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">points-mall.html <em>积分商城</em></div><div class="sub">积分商品、积分不足引导、兑换确认</div><div class="frame"><iframe src="points-mall.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">points.html <em>我的积分</em></div><div class="sub">获取 / 使用记录与积分规则</div><div class="frame"><iframe src="points.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">exchange.html <em>收货地址</em></div><div class="sub">积分兑换与实物奖品共用的地址表单</div><div class="frame"><iframe src="exchange.html" loading="lazy"></iframe></div></div>
+    </div>
+  </div>
+
+  <div class="board-sec">
+    <h2>四、一物一码抽奖</h2>
+    <p class="d">卡片随礼盒发放、每盒一码、APP 内扫码；微信扫码提示下载 APP。</p>
+    <div class="grid">
+      <div class="thumb"><div class="cap">scan.html <em>扫码</em></div><div class="sub">取景框、手动输码、扫码记录、微信扫码引导</div><div class="frame"><iframe src="scan.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">lottery.html <em>抽奖</em></div><div class="sub">转盘抽奖、四档奖项配置、积分自动到账</div><div class="frame"><iframe src="lottery.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">my-prizes.html <em>中奖记录</em></div><div class="sub">待处理 / 已完成筛选与发货状态</div><div class="frame"><iframe src="my-prizes.html" loading="lazy"></iframe></div></div>
+    </div>
+  </div>
+
+  <div class="board-sec">
+    <h2>五、数据与我的</h2>
+    <p class="d">多级角色数据看板（总部/省代/市代/门店/推广员）+ 个人中心与设置。</p>
+    <div class="grid">
+      <div class="thumb"><div class="cap">promotion.html <em>推广中心</em></div><div class="sub">分销聚合入口：数据看板、我的团队、归属、推广码、门店</div><div class="frame"><iframe src="promotion.html?nopopup=1" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">dashboard.html <em>数据看板</em></div><div class="sub">五级角色切换，各自查看自身及下级数据</div><div class="frame"><iframe src="dashboard.html?nopopup=1" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">my-team.html <em>我的团队</em></div><div class="sub">顾客列表、搜索筛选、顾客行为弹窗</div><div class="frame"><iframe src="my-team.html" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">profile.html <em>我的 Tab</em></div><div class="sub">资产入口、归属链路、角色视角切换演示</div><div class="frame"><iframe src="profile.html?nopopup=1" loading="lazy"></iframe></div></div>
+      <div class="thumb"><div class="cap">settings.html <em>设置</em></div><div class="sub">通知开关、隐私、数据导出与删除、绑定状态演示</div><div class="frame"><iframe src="settings.html" loading="lazy"></iframe></div></div>
+    </div>
+  </div>
+
+  <div class="board-sec">
+    <h2>说明</h2>
+    <p class="d">
+      1. 本原型为静态演示，不接后端；数据写在页面里，登录状态与演示角色存在浏览器 localStorage。<br>
+      2. 品牌主色（深墨绿 + 禾金）为占位方案，<b>待客户确认</b>；改色只需调整 assets/style.css 的 :root 变量。<br>
+      3. 直播功能依赖第三方平台，哪些能力能对接自有后台暂未确定，原型按「APP 内可看播、可签到、可领红包」实现。<br>
+      4. 需求中的举例（如「200 元产品 = 200 积分」「一场两次签到」）仅作示例数据展示，实际值均由后台配置。
+    </p>
+  </div>
+</body>
+</html>

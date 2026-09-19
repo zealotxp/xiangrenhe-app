@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>我的红包 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="home.html" data-title="我的红包" data-action="明细"></div>
+
+  <div class="page">
+    <div class="card live center" style="padding:20px 16px">
+      <div class="tiny" style="color:rgba(255,255,255,.72)">红包余额（元）</div>
+      <div style="font-size:38px;font-weight:900;letter-spacing:1px;margin:4px 0">¥<span data-balance>38.60</span></div>
+      <div class="tiny" style="color:rgba(255,255,255,.72)">累计获得 ¥126.00 · 长沙市场发放</div>
+      <div class="row" style="gap:9px;margin-top:14px">
+        <button class="btn grow" style="background:#fff;color:#B02B24" id="withdraw">申请提现</button>
+        <a class="btn grow" style="background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.3)" href="points-mall.html">APP 内消费</a>
+      </div>
+    </div>
+
+    <div class="sec"><h2>本月看播达标</h2></div>
+    <div class="card">
+      <div class="row-b">
+        <div><div class="sm" style="font-weight:700">达标场次</div><div class="tiny muted">共 16 场，其中 2 场因未签到未发放</div></div>
+        <div style="font-size:19px;font-weight:900">14 / 16</div>
+      </div>
+      <div class="bar red" style="margin-top:9px"><i style="width:87%"></i></div>
+    </div>
+
+    <div class="chips" id="tabs" style="margin-bottom:12px">
+      <span class="chip on" data-k="in">收入</span>
+      <span class="chip" data-k="out">支出</span>
+    </div>
+
+    <div data-pane="in">
+      <div class="list">
+        <div class="li"><div class="li-ico red">包</div><div class="li-body"><div class="li-t">第 128 场看播红包</div><div class="li-s">09-18 20:32 · 看播 32 分钟 · 签到 2/2</div></div><div class="li-x" style="color:var(--red);font-weight:800">+¥2.00</div></div>
+        <div class="li"><div class="li-ico red">包</div><div class="li-body"><div class="li-t">第 127 场看播红包</div><div class="li-s">09-15 20:48 · 看播 41 分钟 · 签到 2/2</div></div><div class="li-x" style="color:var(--red);font-weight:800">+¥2.00</div></div>
+        <div class="li"><div class="li-ico gold">补</div><div class="li-body"><div class="li-t">第 124 场红包补发</div><div class="li-s">09-12 10:05 · 市场账户余额不足，充值后自动补发</div></div><div class="li-x" style="color:var(--red);font-weight:800">+¥2.00</div></div>
+        <div class="li"><div class="li-ico red">包</div><div class="li-body"><div class="li-t">第 123 场看播红包</div><div class="li-s">09-11 20:40 · 看播 35 分钟 · 签到 2/2</div></div><div class="li-x" style="color:var(--red);font-weight:800">+¥2.00</div></div>
+      </div>
+      <div class="tip">
+        <span>ⓘ</span>
+        <div>红包由<b>所属市场（市）</b>独立设定金额并发放，资金来源为各市代预充值的市场红包账户。</div>
+      </div>
+    </div>
+
+    <div data-pane="out" class="hide">
+      <div class="list">
+        <div class="li"><div class="li-ico gray">提</div><div class="li-body"><div class="li-t">提现到微信零钱</div><div class="li-s">09-14 15:22 · 已到账</div></div><div class="li-x">-¥50.00</div></div>
+        <div class="li"><div class="li-ico gray">消</div><div class="li-body"><div class="li-t">商城抵用（益生菌组合）</div><div class="li-s">09-08 11:14 · APP 内消费</div></div><div class="li-x">-¥37.40</div></div>
+      </div>
+      <div class="empty" style="padding:26px 0">
+        <div class="tiny">本月支出 2 笔，共 ¥87.40</div>
+      </div>
+    </div>
+
+    <div class="sec"><h2>红包规则</h2></div>
+    <div class="card">
+      <div class="sm" style="line-height:1.95">
+        · <b>触发条件</b>：累计看播达 30 分钟且完成本场全部签到<br>
+        · <b>金额设定</b>：按所属市场（市）独立设定，各市代自行配置<br>
+        · <b>配置时机</b>：开播前完成设定，设定后长期有效，修改即时生效<br>
+        · <b>资金来源</b>：各市代自行预充值到市场红包账户<br>
+        · <b>余额不足</b>：支持扣至负数，后续充值后自动抵扣，并支持补发<br>
+        · <b>使用方式</b>：进入钱包后可申请提现，也可在 APP 内消费
+      </div>
+    </div>
+
+    <a class="btn btn-block btn-gold" href="redpacket-config.html">我是市代，去配置本市红包</a>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+XRH.tabs('#tabs');
+document.getElementById('withdraw').onclick = function () {
+  var u = XRH.user();
+  XRH.modal({
+    html:
+      '<div class="modal-hero red"><div class="mi">提</div>' +
+      '<div class="mt">申请提现</div>' +
+      '<div class="ms">当前可提现余额 ¥' + u.balance.toFixed(2) + '</div></div>' +
+      '<div class="modal-body">' +
+      '<div class="field"><label>提现金额<em>*</em></label><input class="inp" id="w1" value="' + u.balance.toFixed(2) + '" inputmode="decimal"></div>' +
+      '<div class="field"><label>到账方式</label>' +
+      '<div class="chips" id="wch"><span class="chip on">微信零钱</span><span class="chip">银行卡</span></div></div>' +
+      '<div class="tiny muted">单笔最低 ¥1.00，预计 2 小时内到账</div>' +
+      '</div>' +
+      '<div class="modal-foot"><button class="btn" data-close>取消</button><button class="btn btn-red" id="okw">确认提现</button></div>'
+  });
+  XRH.chips('#wch', true);
+  document.getElementById('okw').onclick = function () {
+    var v = parseFloat(document.getElementById('w1').value);
+    if (isNaN(v) || v <= 0 || v > u.balance) { XRH.toast('金额超出可提现余额'); return; }
+    XRH.save({ balance: +(u.balance - v).toFixed(2) });
+    document.querySelector('.mask.on').remove();
+    XRH.toast('提现申请已提交，2 小时内到账');
+    setTimeout(function () { location.reload(); }, 1100);
+  };
+};
+</script>
+</body>
+</html>

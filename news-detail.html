@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>资讯详情 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="brand.html" data-title="公司动态"></div>
+
+  <div class="page">
+    <div class="h1" style="font-size:19px;line-height:1.5">第 128 场全国私域直播圆满收官</div>
+    <div class="row tiny muted" style="margin-top:8px;gap:10px">
+      <span>总部品牌部</span><span>2026-09-18 22:10</span><span>阅读 1.2 万</span>
+    </div>
+
+    <div style="height:150px;border-radius:12px;margin:12px 0;background:linear-gradient(150deg,#EAF4EF,#D5E6DE);display:grid;place-items:center;color:var(--ink3)">直播现场图</div>
+
+    <div class="card">
+      <div class="sm" style="line-height:2">
+        9 月 18 日 19:30，湘仁禾第 128 场全国私域直播《秋季养生专场》准时开播。
+        本场由健康管理中心陈主任主讲，围绕秋季气候特点、蛋白质与膳食纤维补充、特膳食品与普通食品的区别等话题展开，
+        全国会员通过 APP 同步观看，在线峰值达 <b>3.6 万人</b>。
+      </div>
+      <div class="sm" style="line-height:2;margin-top:10px">
+        本场共设置 <b>2 次防挂机签到</b>，签到率 92%；累计看播满 30 分钟并完成签到的会员，
+        由所属市场（市）红包账户自动发放看播红包。经总部批准，长沙市代将于 9 月 22 日单独开播一场冬季进补专场。
+      </div>
+      <div class="sm" style="line-height:2;margin-top:10px">
+        需要提醒的是：本平台直播<b>不带货、无直播销售功能</b>，如需购买产品请前往线下门店，
+        或联系你的专属推广员。买到的每盒产品都附有一张抽奖卡，用 APP 扫码即可登记积分并参与抽奖。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="h3">本场数据</div>
+      <div class="stats" style="margin-top:10px">
+        <div class="stat"><b>3.6万</b><span>在线峰值</span></div>
+        <div class="stat"><b>92%</b><span>签到率</span></div>
+        <div class="stat"><b>86%</b><span>红包达标率</span></div>
+      </div>
+    </div>
+
+    <div class="sec"><h2>相关推荐</h2></div>
+    <div class="list">
+      <a class="li" href="news-detail.html"><div class="li-ico green">产</div><div class="li-body"><div class="li-t">改善睡眠系列新品（GABA 酸枣仁）上市</div><div class="li-s">2026-09-10</div></div><span class="li-x">›</span></a>
+      <a class="li" href="news-detail.html"><div class="li-ico">渠</div><div class="li-body"><div class="li-t">门店申请通道开放</div><div class="li-s">2026-09-05</div></div><span class="li-x">›</span></a>
+    </div>
+
+    <div class="row" style="gap:9px">
+      <button class="btn grow" id="like">👍 有用 236</button>
+      <button class="btn grow" onclick="XRH.toast('分享面板已打开（演示）')">分享给朋友</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+var liked = false;
+document.getElementById('like').onclick = function () {
+  liked = !liked;
+  this.textContent = (liked ? '👍 已点赞 237' : '👍 有用 236');
+  XRH.toast(liked ? '已点赞' : '已取消点赞');
+};
+</script>
+</body>
+</html>

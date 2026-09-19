@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>录播回放 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="live.html" data-title="录播回放"></div>
+
+  <div class="page">
+    <div class="video" style="height:212px;flex:none;background:linear-gradient(160deg,#22333C,#3C5761)">
+      <div class="live-tag" style="background:rgba(0,0,0,.5)">回放 · 92 分钟</div>
+      <div style="position:absolute;inset:0;display:grid;place-items:center">
+        <div id="play" style="width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;color:#12463A;font-size:24px">▶</div>
+      </div>
+      <div style="position:absolute;left:14px;right:14px;bottom:14px">
+        <div class="row-b tiny" style="color:rgba(255,255,255,.8)"><span id="t">12:36</span><span>1.0×</span><span>92:00</span></div>
+        <div class="bar" style="margin-top:5px;background:rgba(255,255,255,.25)"><i id="bar" style="width:14%;background:#fff"></i></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="h2">免疫与肠道健康</div>
+      <div class="tiny muted" style="margin-top:4px">第 127 场 · 原直播 09-15 19:30 · 主讲：陈主任</div>
+      <div class="row" style="margin-top:10px;gap:6px;flex-wrap:wrap">
+        <span class="badge b-gray">1.2 万次播放</span>
+        <span class="badge b-green">回放计入积分</span>
+        <span class="badge b-gold">可重复投放</span>
+      </div>
+    </div>
+
+    <div class="sec"><h2>章节</h2></div>
+    <div class="list">
+      <div class="li"><div class="li-ico">1</div><div class="li-body"><div class="li-t">肠道菌群与免疫的关系</div><div class="li-s">00:00 - 18:20</div></div></div>
+      <div class="li"><div class="li-ico">2</div><div class="li-body"><div class="li-t">日常饮食中的益生菌来源</div><div class="li-s">18:20 - 41:05</div></div></div>
+      <div class="li"><div class="li-ico">3</div><div class="li-body"><div class="li-t">中老年常见问题答疑</div><div class="li-s">41:05 - 76:30</div></div></div>
+      <div class="li"><div class="li-ico">4</div><div class="li-body"><div class="li-t">互动问答精选</div><div class="li-s">76:30 - 92:00</div></div></div>
+    </div>
+
+    <div class="sec"><h2>我的观看记录</h2></div>
+    <div class="card">
+      <div class="row-b"><div class="sm" style="font-weight:700">上次观看</div><span class="tiny muted">09-17 20:14</span></div>
+      <div class="bar" style="margin-top:8px"><i style="width:14%"></i></div>
+      <div class="tiny muted" style="margin-top:6px">已看 12 分 36 秒 · 继续观看可累计积分</div>
+    </div>
+
+    <div class="tip blue">
+      <span>ⓘ</span>
+      <div>相同内容可重复投放，<b>录播回放</b>由总部上传；是否计入看播时长与红包，由后台按场次配置（本场已开启积分）。</div>
+    </div>
+
+    <button class="btn btn-block btn-primary" onclick="XRH.toast('已加入「稍后再看」')">加入稍后再看</button>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+var playing = false, t = 0, timer = null;
+document.getElementById('play').onclick = function () {
+  playing = !playing;
+  this.textContent = playing ? '❚❚' : '▶';
+  if (playing) {
+    var self = this;
+    timer = setInterval(function () {
+      t++;
+      var m = Math.floor(t / 60), s = t % 60;
+      document.getElementById('t').textContent = m + ':' + (s < 10 ? '0' : '') + s;
+      document.getElementById('bar').style.width = Math.min(100, t / (92 * 60) * 100) + '%';
+      if (t % 60 === 0) XRH.toast('看播积分 +1（演示）');
+    }, 1000);
+  } else { clearInterval(timer); }
+};
+</script>
+</body>
+</html>

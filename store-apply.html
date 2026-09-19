@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>门店申请 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="promotion.html" data-title="门店申请"></div>
+
+  <div class="page">
+    <div class="tip blue">
+      <span>ⓘ</span>
+      <div><b>不要求本品牌专卖店。</b>任意实体门店或虚拟门店均可申请加入，总部审核通过后开通门店端口。</div>
+    </div>
+
+    <div class="card" id="formCard">
+      <div class="sec mt0" style="margin-top:0"><h2>门店信息</h2></div>
+
+      <div class="field">
+        <label>门店名称<em>*</em></label>
+        <input class="inp" id="f1" placeholder="如：仁和堂健康生活馆" value="仁和堂健康生活馆">
+      </div>
+      <div class="two">
+        <div class="field">
+          <label>所在省份<em>*</em></label>
+          <select class="inp" id="f2">
+            <option>湖南省</option><option>广东省</option><option>湖北省</option><option>江西省</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>所在城市<em>*</em></label>
+          <select class="inp" id="f3">
+            <option>长沙市</option><option>株洲市</option><option>湘潭市</option><option>衡阳市</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>详细地址<em>*</em></label>
+        <input class="inp" id="f4" placeholder="如：雨花区韶山中路 218 号" value="雨花区韶山中路 218 号">
+      </div>
+      <div class="two">
+        <div class="field">
+          <label>联系人<em>*</em></label>
+          <input class="inp" id="f5" placeholder="店长姓名" value="刘建国">
+        </div>
+        <div class="field">
+          <label>联系电话<em>*</em></label>
+          <input class="inp" id="f6" placeholder="手机号" value="139 0731">
+        </div>
+      </div>
+      <div class="field">
+        <label>门店类型<em>*</em></label>
+        <div class="chips" id="typeChips">
+          <span class="chip on" data-k="实体门店">实体门店</span>
+          <span class="chip" data-k="虚拟门店">虚拟门店</span>
+        </div>
+      </div>
+      <div class="field">
+        <label>门店照片 / 营业执照（选填）</label>
+        <div class="row" style="gap:9px">
+          <div style="width:74px;height:74px;border-radius:12px;border:1px dashed #CFD8D4;display:grid;place-items:center;color:var(--ink3);font-size:20px">＋</div>
+          <div class="tiny muted grow">最多 3 张，单张不超过 5MB<br>演示原型，上传为模拟交互</div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="submit">提交申请</button>
+      <div class="tiny muted center" style="margin-top:9px">提交后由总部后台审核，审核进度可在「我的 › 门店管理」查看</div>
+    </div>
+
+    <div class="card hide" id="doneCard">
+      <div class="center" style="padding:6px 0 2px">
+        <div style="width:56px;height:56px;border-radius:50%;background:#EAF7F1;display:grid;place-items:center;margin:0 auto;font-size:26px">✓</div>
+        <div class="h2" style="margin-top:10px">申请已提交</div>
+        <div class="tiny muted">总部将在 1-2 个工作日内完成审核</div>
+      </div>
+      <div class="card flat" style="margin-top:12px">
+        <div class="tl">
+          <div class="tl-i done"><div class="tl-t">提交申请</div><div class="tl-s" id="t1">刚刚</div></div>
+          <div class="tl-i now"><div class="tl-t">总部审核中</div><div class="tl-s">审核门店资质与归属市代</div></div>
+          <div class="tl-i"><div class="tl-t">开通门店端口</div><div class="tl-s">生成门店专属推广码，推广员扫码即绑定</div></div>
+        </div>
+      </div>
+      <a class="btn btn-block btn-gold" href="invite.html">查看门店推广码（演示）</a>
+      <button class="btn btn-block" style="margin-top:9px" id="reset">再填一份</button>
+    </div>
+
+    <div class="sec"><h2>门店端口能力</h2></div>
+    <div class="list">
+      <div class="li"><div class="li-ico">码</div><div class="li-body"><div class="li-t">生成门店推广码</div><div class="li-s">推广员扫码即绑定本店，归属自动挂到本店下</div></div></div>
+      <div class="li"><div class="li-ico gold">队</div><div class="li-body"><div class="li-t">查看本店推广员与顾客</div><div class="li-s">仅可查看本店及下级数据，不可越级</div></div></div>
+      <div class="li"><div class="li-ico blue">据</div><div class="li-body"><div class="li-t">本店看播 / 积分数据</div><div class="li-s">看播时长、签到率、扫码积分反推成交量</div></div></div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+XRH.chips('#typeChips', true);
+document.getElementById('submit').onclick = function () {
+  var ok = ['f1', 'f4', 'f5', 'f6'].every(function (id) { return document.getElementById(id).value.trim(); });
+  if (!ok) { XRH.toast('请填写完整门店信息'); return; }
+  XRH.save({ store: document.getElementById('f1').value, role: 'store' });
+  var d = new Date();
+  document.getElementById('t1').textContent = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2) + ' ' + ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2);
+  document.getElementById('formCard').classList.add('hide');
+  document.getElementById('doneCard').classList.remove('hide');
+  XRH.toast('门店申请已提交，等待总部审核');
+};
+document.getElementById('reset').onclick = function () {
+  document.getElementById('doneCard').classList.add('hide');
+  document.getElementById('formCard').classList.remove('hide');
+};
+</script>
+</body>
+</html>

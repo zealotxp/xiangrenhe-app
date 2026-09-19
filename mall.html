@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>商城 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-title="商城" data-sub="产品展示 · 积分兑换"></div>
+
+  <div class="page">
+    <div class="chips" id="tabs" style="margin-bottom:12px">
+      <span class="chip on" data-k="show">产品展示中心</span>
+      <span class="chip" data-k="point">积分商城</span>
+    </div>
+
+    <!-- 产品展示中心 -->
+    <div data-pane="show">
+      <div class="card dark" style="padding:16px">
+        <div class="h2" style="color:#fff">湘仁禾 · 特膳食品</div>
+        <div class="tiny" style="color:rgba(255,255,255,.66);margin-top:5px;line-height:1.7">
+          严选全球优质原料，深耕大众健康领域，专注<b>改善记忆力、改善睡眠、提升精气神</b>等身体亚健康问题。全部产品<b>仅线下门店销售</b>，本板块仅供了解与查询。
+        </div>
+        <div class="row" style="margin-top:12px;gap:8px">
+          <a class="btn btn-sm" style="background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.28)" href="brand.html">企业介绍</a>
+          <a class="btn btn-sm" style="background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.28)" href="product.html">全部产品</a>
+        </div>
+      </div>
+
+      <div class="scroll-x" id="cats">
+        <span class="chip on">全部</span>
+        <span class="chip">改善记忆力</span>
+        <span class="chip">改善睡眠</span>
+        <span class="chip">提升精气神</span>
+        <span class="chip">礼盒装</span>
+      </div>
+
+      <div class="goods" style="margin-top:12px">
+        <a class="g-c" href="product-detail.html">
+          <div class="ph">忆</div>
+          <div class="bd">
+            <div class="gt">磷脂酰丝氨酸（PS）复合特膳粉</div>
+            <div class="gp">¥398 <span class="badge b-gray" style="font-weight:600">30 条</span></div>
+            <div class="tiny muted" style="margin-top:3px">方向：改善记忆力</div>
+          </div>
+        </a>
+        <a class="g-c" href="product-detail.html">
+          <div class="ph gold">眠</div>
+          <div class="bd">
+            <div class="gt">γ-氨基丁酸（GABA）酸枣仁特膳饮</div>
+            <div class="gp">¥268 <span class="badge b-gray" style="font-weight:600">20 袋</span></div>
+            <div class="tiny muted" style="margin-top:3px">方向：改善睡眠</div>
+          </div>
+        </a>
+        <a class="g-c" href="product-detail.html">
+          <div class="ph gold">神</div>
+          <div class="bd">
+            <div class="gt">人参枸杞黄精特膳饮</div>
+            <div class="gp">¥198 <span class="badge b-gray" style="font-weight:600">10 瓶</span></div>
+            <div class="tiny muted" style="margin-top:3px">方向：提升精气神</div>
+          </div>
+        </a>
+        <a class="g-c" href="product-detail.html">
+          <div class="ph">芝</div>
+          <div class="bd">
+            <div class="gt">灵芝孢子油软胶囊</div>
+            <div class="gp">¥598 <span class="badge b-gray" style="font-weight:600">60 粒</span></div>
+            <div class="tiny muted" style="margin-top:3px">方向：提升精气神</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="tip">
+        <span>ⓘ</span>
+        <div><b>产品展示中心仅展示，不支持在线购买。</b>主品销售全部引导至线下门店；每盒产品附一张抽奖卡，APP 内扫码即得积分并抽奖。</div>
+      </div>
+
+      <div class="sec"><h2>公司动态</h2><a class="more" href="brand.html">全部 ›</a></div>
+      <div class="list">
+        <a class="li" href="news-detail.html"><div class="li-ico gold">新</div><div class="li-body"><div class="li-t">第 128 场全国私域直播圆满收官</div><div class="li-s">2026-09-18</div></div><span class="li-x">›</span></a>
+        <a class="li" href="news-detail.html"><div class="li-ico green">产</div><div class="li-body"><div class="li-t">改善睡眠系列新品（GABA 酸枣仁）上市</div><div class="li-s">2026-09-10</div></div><span class="li-x">›</span></a>
+      </div>
+    </div>
+
+    <!-- 积分商城 -->
+    <div data-pane="point" class="hide">
+      <div class="card gold center">
+        <div class="tiny muted">我的积分余额</div>
+        <div style="font-size:34px;font-weight:900;color:var(--gold)" data-points>1260</div>
+        <div class="row" style="gap:9px;margin-top:12px">
+          <a class="btn grow btn-gold" href="points-mall.html">去兑换</a>
+          <a class="btn grow" href="points.html">积分明细</a>
+        </div>
+      </div>
+
+      <div class="sec"><h2>热门兑换</h2><a class="more" href="points-mall.html">全部 ›</a></div>
+      <div class="goods">
+        <a class="g-c" href="points-mall.html">
+          <div class="ph gold">巾</div>
+          <div class="bd"><div class="gt">湘仁禾纯棉毛巾礼盒</div><div class="gp" style="color:var(--gold)">800 积分</div></div>
+        </a>
+        <a class="g-c" href="points-mall.html">
+          <div class="ph gold">杯</div>
+          <div class="bd"><div class="gt">保温养生杯</div><div class="gp" style="color:var(--gold)">1,200 积分</div></div>
+        </a>
+        <a class="g-c" href="points-mall.html">
+          <div class="ph gold">米</div>
+          <div class="bd"><div class="gt">东北五常大米 5kg</div><div class="gp" style="color:var(--gold)">1,500 积分</div></div>
+        </a>
+        <a class="g-c" href="points-mall.html">
+          <div class="ph gold">枕</div>
+          <div class="bd"><div class="gt">乳胶护颈枕</div><div class="gp" style="color:var(--gold)">2,600 积分</div></div>
+        </a>
+      </div>
+
+      <div class="tip red">
+        <span>!</span>
+        <div>积分商城商品<b>仅支持积分兑换，不支持现金购买</b>；兑换商品由总部指定，<b>不可兑换主品</b>，积分也不可提现。</div>
+      </div>
+
+      <div class="sec"><h2>积分怎么来</h2></div>
+      <div class="list">
+        <a class="li" href="live.html"><div class="li-ico red">播</div><div class="li-body"><div class="li-t">看直播</div><div class="li-s">有效看播时长达到要求可获得积分</div></div><span class="li-x">›</span></a>
+        <a class="li" href="scan.html"><div class="li-ico gold">码</div><div class="li-body"><div class="li-t">购买产品（一物一码）</div><div class="li-s">按产品金额 1:1 发放，每盒一个码</div></div><span class="li-x">›</span></a>
+        <a class="li" href="lottery.html"><div class="li-ico purple">奖</div><div class="li-body"><div class="li-t">抽奖中奖</div><div class="li-s">幸运奖可奖励额外积分</div></div><span class="li-x">›</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabbar" data-tabbar="mall"></div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+XRH.tabs('#tabs');
+XRH.chips('#cats', true, function (c) { XRH.toast('已筛选：' + c.textContent); });
+</script>
+</body>
+</html>

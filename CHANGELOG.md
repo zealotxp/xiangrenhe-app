@@ -1,0 +1,28 @@
+# 更新记录
+
+本项目遵循 [SemVer](https://semver.org/lang/zh-CN/) 版本号规则：
+
+- **MAJOR**（x+1.0.0）：需求结构级变更，如模块增删、业务流程重构、架构调整
+- **MINOR**（x.y+1.0）：新增页面、新增功能点、重要交互改动
+- **PATCH**（x.y.z+1）：样式修复、文案调整、小优化
+
+所有版本号记录倒序排列，最新在最上。
+
+---
+
+## [1.0.0] - 2026-09-19
+
+### Added
+- 依据《湘仁禾私域会员APP开发需求方案 v1》完成 26 个业务页面的多页面（MPA）静态原型
+- 入口与归属：index（启动登录）、register（注册与归属绑定）、store-apply（门店申请）、invite（推广码与邀请）
+- 直播模块：live（直播 Tab）、live-room（直播间含看播计时/防挂机签到/红包领取）、live-replay（录播回放）、wallet（我的红包）、redpacket-config（市代红包配置与充值）
+- 商城与积分：mall（商城 Tab）、product（产品展示中心）、product-detail（产品详情）、brand（企业介绍/荣誉/历程/动态）、news-detail（资讯详情）、points-mall（积分商城）、points（我的积分）、exchange（兑换与收货地址）
+- 一物一码：scan（扫码）、lottery（转盘抽奖）、my-prizes（中奖记录）
+- 数据与我的：promotion（推广中心）、dashboard（五级角色数据看板）、my-team（我的团队）、profile（我的）、settings（设置与隐私）
+- 公共设计系统：assets/style.css（配色/组件/手机壳 375×812）、assets/app.js（状态栏/导航栏/底部 Tab/弹窗/Toast/本地演示状态）
+- sitemap.html 总览看板（26 页缩略图 + 模块说明）
+- check_proto.py 静态校验脚本（HTML 标签配平 + 站内链接检查）
+
+### Changed
+- 产品展示按「改善记忆力 / 改善睡眠 / 提升精气神」三大方向组织，商品卡标题支持两行显示
+- 企业介绍采用定稿文案：严选全球优质原料、深耕大众健康、原创团队深耕大健康二十余载、赋能千余家连锁门店

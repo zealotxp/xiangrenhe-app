@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>填写收货地址 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="points-mall.html" data-title="确认订单"></div>
+
+  <div class="page">
+    <div class="card" id="orderCard">
+      <div class="row">
+        <div style="width:64px;height:64px;border-radius:12px;background:linear-gradient(150deg,#FBF3E3,#F0E4C8);display:grid;place-items:center;font-size:24px">🎁</div>
+        <div class="grow">
+          <div class="h3" id="gname">湘仁禾纯棉毛巾礼盒</div>
+          <div class="tiny muted" style="margin-top:3px" id="gsub">积分兑换 · 由总部统一发货</div>
+          <div style="margin-top:5px;color:var(--gold);font-weight:900" id="gprice">800 积分</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec"><h2>收货地址</h2><span class="more" id="pick">选择已有地址</span></div>
+    <div class="card" id="formCard">
+      <div class="field">
+        <label>收货人<em>*</em></label>
+        <input class="inp" id="a1" value="李阿姨" placeholder="请输入收货人姓名">
+      </div>
+      <div class="field">
+        <label>联系电话<em>*</em></label>
+        <input class="inp" id="a2" value="138 7621" placeholder="手机号" inputmode="numeric">
+      </div>
+      <div class="two">
+        <div class="field">
+          <label>省份<em>*</em></label>
+          <select class="inp" id="a3"><option>湖南省</option><option>广东省</option><option>湖北省</option></select>
+        </div>
+        <div class="field">
+          <label>城市<em>*</em></label>
+          <select class="inp" id="a4"><option>长沙市</option><option>株洲市</option><option>湘潭市</option></select>
+        </div>
+      </div>
+      <div class="field">
+        <label>详细地址<em>*</em></label>
+        <textarea class="inp" id="a5" rows="2" placeholder="街道、门牌号、小区楼栋">雨花区韶山中路 218 号 3 栋 502</textarea>
+      </div>
+      <div class="row" style="gap:8px;margin-bottom:12px">
+        <span class="check on" id="def">✓</span>
+        <span class="sm">设为默认地址</span>
+      </div>
+      <button class="btn btn-primary btn-block" id="submit">提交订单</button>
+      <div class="tiny muted center" style="margin-top:9px">实物兑换需填写收货地址，由总部统一发货</div>
+    </div>
+
+    <div class="card hide" id="okCard">
+      <div class="center" style="padding:8px 0 2px">
+        <div style="width:56px;height:56px;border-radius:50%;background:#EAF7F1;display:grid;place-items:center;margin:0 auto;font-size:26px">✓</div>
+        <div class="h2" style="margin-top:10px">提交成功</div>
+        <div class="tiny muted" id="okSub">订单号 XRH-EX-20260919-0031</div>
+      </div>
+      <div class="card flat" style="margin-top:12px">
+        <div class="row-b sm" style="padding:6px 0;border-bottom:1px solid var(--line)"><span class="muted">商品</span><span id="okName">—</span></div>
+        <div class="row-b sm" style="padding:6px 0;border-bottom:1px solid var(--line)"><span class="muted">收货人</span><span id="okAddr">—</span></div>
+        <div class="row-b sm" style="padding:6px 0"><span class="muted">预计发货</span><span>3-5 个工作日内</span></div>
+      </div>
+      <div class="tl" style="margin-top:12px">
+        <div class="tl-i done"><div class="tl-t">订单已提交</div><div class="tl-s">等待总部审核</div></div>
+        <div class="tl-i now"><div class="tl-t">仓库配货</div><div class="tl-s">长沙中心仓</div></div>
+        <div class="tl-i"><div class="tl-t">已发货</div><div class="tl-s">物流单号将通过消息通知</div></div>
+      </div>
+      <a class="btn btn-block btn-gold" href="points.html" style="margin-top:12px">查看积分明细</a>
+      <a class="btn btn-block" href="home.html" style="margin-top:9px">返回首页</a>
+    </div>
+
+    <div class="tip blue" id="tipCard">
+      <span>ⓘ</span>
+      <div id="tipText">兑换成功后积分即时扣除，不支持撤销；主品不可使用积分兑换。</div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+var g = XRH.q('g') || '湘仁禾纯棉毛巾礼盒';
+var p = parseInt(XRH.q('p') || '800', 10);
+var prize = XRH.q('prize');
+var isPrize = !!prize;
+
+if (isPrize) {
+  document.getElementById('gname').textContent = prize;
+  document.getElementById('gsub').textContent = '实物奖品 · 由总部统一发货';
+  document.getElementById('gprice').textContent = '奖品兑换';
+  document.getElementById('tipText').textContent = '实物奖品由总部统一发货，奖品成本由总部承担，非门店承担。';
+  document.querySelector('.nav .nav-title').innerHTML = '奖品领取';
+}
+
+document.getElementById('def').onclick = function () {
+  this.classList.toggle('on');
+  this.textContent = this.classList.contains('on') ? '✓' : '';
+};
+
+document.getElementById('pick').onclick = function () {
+  XRH.modal({
+    html:
+      '<div class="modal-hero"><div class="mi">址</div><div class="mt">选择已有地址</div><div class="ms">也可在提交页直接修改</div></div>' +
+      '<div class="modal-body">' +
+      '<div class="li" style="padding:10px 0;border-bottom:1px solid var(--line)"><div class="grow"><div class="li-t">李阿姨 138****7621</div><div class="li-s">湖南省长沙市雨花区韶山中路 218 号 3 栋 502</div></div><span class="badge b-gold">默认</span></div>' +
+      '<div class="li" style="padding:10px 0"><div class="grow"><div class="li-t">李阿姨（门店自提）</div><div class="li-s">湖南省长沙市雨花区韶山中路 218 号 仁和堂健康生活馆</div></div></div>' +
+      '</div>' +
+      '<div class="modal-foot"><button class="btn btn-primary btn-block" data-close>使用默认地址</button></div>'
+  });
+};
+
+document.getElementById('submit').onclick = function () {
+  var ok = ['a1', 'a2', 'a5'].every(function (id) { return document.getElementById(id).value.trim(); });
+  if (!ok) { XRH.toast('请填写完整收货信息'); return; }
+  if (!isPrize) {
+    var u = XRH.user();
+    if (u.points < p) { XRH.toast('积分不足，无法兑换'); return; }
+    XRH.save({ points: u.points - p });
+  }
+  document.getElementById('okName').textContent = isPrize ? prize : g;
+  document.getElementById('okAddr').textContent = document.getElementById('a1').value + ' · ' +
+    document.getElementById('a4').value + document.getElementById('a5').value.slice(0, 10) + '…';
+  document.getElementById('okSub').textContent = '订单号 XRH-EX-20260919-' + String(Math.floor(Math.random() * 9000) + 1000);
+  document.getElementById('formCard').classList.add('hide');
+  document.getElementById('tipCard').classList.add('hide');
+  document.getElementById('okCard').classList.remove('hide');
+  XRH.toast('提交成功，3-5 个工作日内发货');
+};
+</script>
+</body>
+</html>

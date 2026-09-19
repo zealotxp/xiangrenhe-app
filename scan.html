@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>扫码 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="home.html" data-title="扫码抽奖"></div>
+
+  <div class="page no-pad">
+    <div class="viewfinder">
+      <div class="box-q"><div class="scan-line"></div></div>
+      <div class="hint">将产品卡片上的二维码放入取景框</div>
+    </div>
+
+    <div style="padding:14px">
+      <div class="tip">
+        <span>ⓘ</span>
+        <div>二维码印在<b>卡片</b>上，卡片随产品礼盒一同发放（不直接印在产品包装上）。<b>每盒产品对应一张卡片一个码</b>，买几盒扫几次。</div>
+      </div>
+
+      <button class="btn btn-block btn-gold" id="simulate">模拟扫码成功（演示）</button>
+
+      <div class="card" style="margin-top:12px">
+        <div class="h3">无法扫码？手动输入卡号</div>
+        <div class="code-inp" style="margin-top:9px">
+          <input class="inp" id="manual" placeholder="输入卡片上的 16 位编码">
+          <button class="code-btn" id="mgo">确认</button>
+        </div>
+      </div>
+
+      <div class="sec"><h2>扫码记录</h2><a class="more" href="points.html">积分明细 ›</a></div>
+      <div class="list">
+        <a class="li" href="lottery.html"><div class="li-ico gold">码</div><div class="li-body"><div class="li-t">磷脂酰丝氨酸（PS）复合特膳粉 · 398 积分</div><div class="li-s">09-17 14:22 · XRH-C-0092381 · 已抽奖</div></div><span class="li-x">›</span></a>
+        <a class="li" href="lottery.html"><div class="li-ico gold">码</div><div class="li-body"><div class="li-t">γ-氨基丁酸（GABA）酸枣仁特膳饮 · 268 积分</div><div class="li-s">09-11 10:08 · XRH-C-0087412 · 已抽奖</div></div><span class="li-x">›</span></a>
+        <a class="li" href="lottery.html"><div class="li-ico gray">码</div><div class="li-body"><div class="li-t">人参枸杞黄精特膳饮 · 198 积分</div><div class="li-s">09-03 16:45 · XRH-C-0081207 · 未抽奖</div></div><span class="li-x">去抽奖 ›</span></a>
+      </div>
+
+      <div class="tip blue">
+        <span>ⓘ</span>
+        <div><b>如果你是用微信扫的码</b>：微信会提示「请在湘仁禾 APP 内扫码」，下载安装 APP 后重新扫描即可登记积分并参与抽奖。</div>
+      </div>
+
+      <div class="card">
+        <div class="h3">微信扫码提示页（示意）</div>
+        <div class="sm muted" style="margin-top:8px;line-height:1.9">
+          直接用微信扫码 → 跳转下载引导页，展示 APP 下载按钮与归属绑定说明；<br>
+          在 APP 内扫码 → 自动发放购物积分并进入抽奖页。
+        </div>
+        <button class="btn btn-block" style="margin-top:10px" onclick="XRH.toast('已复制下载链接（演示）')">复制 APP 下载链接</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+function scanned() {
+  var code = 'XRH-C-00' + Math.floor(Math.random() * 900000 + 100000);
+  XRH.modal({
+    dismissable: false,
+    html:
+      '<div class="modal-hero gold"><div class="mi">码</div>' +
+      '<div class="mt">扫码成功</div>' +
+      '<div class="ms">磷脂酰丝氨酸（PS）复合特膳粉 · 编码 ' + code + '</div></div>' +
+      '<div class="modal-body">' +
+      '<div class="mk">已到账</div>' +
+      '<ul><li>购物积分 <b>398</b>（按产品金额 1:1 发放）</li><li>获得 1 次抽奖机会</li></ul>' +
+      '</div>' +
+      '<div class="modal-foot"><button class="btn" data-close>稍后抽奖</button>' +
+      '<a class="btn btn-primary" href="lottery.html?code=' + code + '">立即抽奖</a></div>'
+  });
+}
+document.getElementById('simulate').onclick = scanned;
+document.getElementById('mgo').onclick = function () {
+  var v = document.getElementById('manual').value.trim();
+  if (!v) { XRH.toast('请输入卡片编码'); return; }
+  scanned();
+};
+</script>
+</body>
+</html>

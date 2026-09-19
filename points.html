@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>我的积分 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="home.html" data-title="我的积分"></div>
+
+  <div class="page">
+    <div class="card dark center" style="padding:18px 16px">
+      <div class="tiny" style="color:rgba(255,255,255,.62)">积分余额</div>
+      <div style="font-size:38px;font-weight:900;color:#E8CE8C" data-points>1260</div>
+      <div class="tiny" style="color:rgba(255,255,255,.62);margin-top:3px">累计获得 4,860 · 累计使用 3,600</div>
+      <a class="btn btn-sm btn-gold" href="points-mall.html" style="margin-top:12px">去积分商城兑换</a>
+    </div>
+
+    <div class="chips" id="tabs" style="margin-bottom:12px">
+      <span class="chip on" data-k="in">获取记录</span>
+      <span class="chip" data-k="out">使用记录</span>
+      <span class="chip" data-k="rule">规则</span>
+    </div>
+
+    <div data-pane="in">
+      <div class="list">
+        <div class="li"><div class="li-ico gold">码</div><div class="li-body"><div class="li-t">一物一码 · 磷脂酰丝氨酸（PS）复合特膳粉</div><div class="li-s">09-17 14:22 · 湘仁禾 XRH-C-0092381</div></div><div class="li-x" style="color:var(--green);font-weight:800">+398</div></div>
+        <div class="li"><div class="li-ico red">播</div><div class="li-body"><div class="li-t">第 127 场直播看播积分</div><div class="li-s">09-15 20:48 · 有效看播 41 分钟</div></div><div class="li-x" style="color:var(--green);font-weight:800">+20</div></div>
+        <div class="li"><div class="li-ico purple">奖</div><div class="li-body"><div class="li-t">抽奖幸运奖</div><div class="li-s">09-15 14:36 · 幸运奖积分奖励</div></div><div class="li-x" style="color:var(--green);font-weight:800">+50</div></div>
+        <div class="li"><div class="li-ico gold">码</div><div class="li-body"><div class="li-t">一物一码 · γ-氨基丁酸（GABA）酸枣仁特膳饮</div><div class="li-s">09-11 10:08 · 湘仁禾 XRH-C-0087412</div></div><div class="li-x" style="color:var(--green);font-weight:800">+268</div></div>
+      </div>
+      <div class="tip green">
+        <span>ⓘ</span>
+        <div>每盒产品对应<b>一张卡片一个码</b>，买几盒扫几次；积分按产品金额 <b>1:1</b> 发放（如 200 元产品 = 200 积分）。</div>
+      </div>
+    </div>
+
+    <div data-pane="out" class="hide">
+      <div class="list">
+        <div class="li"><div class="li-ico gray">兑</div><div class="li-body"><div class="li-t">兑换 保温养生杯</div><div class="li-s">09-09 16:02 · 已发货</div></div><div class="li-x">-1,200</div></div>
+        <div class="li"><div class="li-ico gray">兑</div><div class="li-body"><div class="li-t">兑换 纯棉毛巾礼盒</div><div class="li-s">09-02 11:31 · 已签收</div></div><div class="li-x">-800</div></div>
+        <div class="li"><div class="li-ico gray">兑</div><div class="li-body"><div class="li-t">兑换 东北五常大米 5kg</div><div class="li-s">08-21 09:14 · 已签收</div></div><div class="li-x">-1,500</div></div>
+      </div>
+      <div class="empty" style="padding:22px 0"><div class="tiny">累计使用 3,600 积分</div></div>
+    </div>
+
+    <div data-pane="rule" class="hide">
+      <div class="card">
+        <div class="h3">积分获取途径</div>
+        <div class="sm" style="line-height:1.95;margin-top:9px">
+          · <b>看直播</b>：有效看播时长达到要求可获得积分（具体积分值后台可配）<br>
+          · <b>购买产品</b>：通过一物一码扫码获得，按产品金额 1:1 发放<br>
+          · <b>抽奖中奖</b>：幸运奖可奖励额外积分（奖项由后台配置）
+        </div>
+      </div>
+      <div class="card">
+        <div class="h3">积分使用规则</div>
+        <div class="sm" style="line-height:1.95;margin-top:9px">
+          · 积分<b>仅可在积分商城兑换指定商品</b><br>
+          · 积分<b>不可兑换主品</b><br>
+          · 积分<b>不可提现</b>、不可转让<br>
+          · 兑换实物需填写收货地址，由总部统一发货
+        </div>
+      </div>
+      <div class="tip">
+        <span>ⓘ</span>
+        <div>积分规则（每积分对应金额、看播积分值、奖项积分）均由总部在后台统一配置，APP 端实时生效。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>XRH.tabs('#tabs');</script>
+</body>
+</html>

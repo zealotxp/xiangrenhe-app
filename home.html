@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>首页 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone hero">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-title="湘仁禾" data-sub="长沙市场 · 会员中心" data-action="客服" data-action-href="settings.html"></div>
+
+  <div class="page">
+    <!-- 会员身份卡 -->
+    <div class="card dark">
+      <div class="row">
+        <div class="avatar gold">李</div>
+        <div class="grow">
+          <div class="h3" style="color:#fff">李阿姨 <span class="badge b-gold" data-role>顾客</span></div>
+          <div class="tiny" style="color:rgba(255,255,255,.66);margin-top:2px" id="belong">归属：王姐 › 仁和堂健康生活馆（长沙雨花店）</div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:12px;gap:10px">
+        <div class="grow" style="text-align:center">
+          <div style="font-size:20px;font-weight:900;color:#E8CE8C" data-points>1260</div>
+          <div class="tiny" style="color:rgba(255,255,255,.6)">我的积分</div>
+        </div>
+        <div style="width:1px;height:30px;background:rgba(255,255,255,.16)"></div>
+        <div class="grow" style="text-align:center">
+          <div style="font-size:20px;font-weight:900;color:#E8CE8C">¥<span data-balance>38.60</span></div>
+          <div class="tiny" style="color:rgba(255,255,255,.6)">红包余额</div>
+        </div>
+        <div style="width:1px;height:30px;background:rgba(255,255,255,.16)"></div>
+        <div class="grow" style="text-align:center">
+          <div style="font-size:20px;font-weight:900;color:#E8CE8C">16</div>
+          <div class="tiny" style="color:rgba(255,255,255,.6)">已看直播</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 未绑定推广员时的提示（原型演示用） -->
+    <div class="tip red hide" id="unbindTip">
+      <span>!</span>
+      <div class="grow">
+        <div><b>未绑定推广员，直播入口暂不开放</b></div>
+        <div class="tiny">自行注册的用户仅可浏览企业介绍、产品展示等公开内容。绑定后即可看播领红包。</div>
+      </div>
+      <a class="btn btn-sm btn-red" href="register.html" style="flex:none">去绑定</a>
+    </div>
+
+    <!-- 直播入口 -->
+    <div class="card live" id="liveCard">
+      <div class="row-b">
+        <div>
+          <div class="row" style="gap:6px">
+            <span class="badge" style="background:rgba(255,255,255,.22);color:#fff">直播中</span>
+            <span class="h3" style="color:#fff">第 128 场 · 秋季养生专场</span>
+          </div>
+          <div class="tiny" style="color:rgba(255,255,255,.7);margin-top:5px">19:30 已开播 · 全国会员同步观看 · 3,218 人在线</div>
+        </div>
+        <a class="btn btn-sm" style="background:#fff;color:#B02B24;flex:none" href="live-room.html">进入 ›</a>
+      </div>
+      <div class="bar" style="margin-top:11px;background:rgba(255,255,255,.24)"><i style="width:60%;background:#fff"></i></div>
+      <div class="tiny" style="color:rgba(255,255,255,.76);margin-top:6px">今日已看播 18 分钟 / 达标 30 分钟，签到 1/2 次</div>
+    </div>
+
+    <!-- 今日任务 -->
+    <div class="sec"><h2>今日任务</h2><span class="more">每日 0 点刷新 · 1/3 已完成</span></div>
+    <div class="card">
+      <div class="row-b" style="padding:7px 0;border-bottom:1px solid var(--line)">
+        <div class="row">
+          <span class="check on">✓</span>
+          <div><div class="sm" style="font-weight:700">完成 1 次直播签到</div><div class="tiny muted">+10 积分 · 已完成 1/2</div></div>
+        </div>
+        <span class="badge b-green">已领</span>
+      </div>
+      <div class="row-b" style="padding:7px 0;border-bottom:1px solid var(--line)">
+        <div class="row">
+          <span class="check" id="tk1"></span>
+          <div><div class="sm" style="font-weight:700">累计看播满 30 分钟</div><div class="tiny muted">+20 积分 · 当前 18 分钟</div></div>
+        </div>
+        <a class="btn btn-sm btn-red" href="live-room.html">去观看</a>
+      </div>
+      <div class="row-b" style="padding:7px 0">
+        <div class="row">
+          <span class="check" id="tk2"></span>
+          <div><div class="sm" style="font-weight:700">扫码登记一盒产品</div><div class="tiny muted">按产品金额 1:1 发放积分</div></div>
+        </div>
+        <a class="btn btn-sm btn-gold" href="scan.html">去扫码</a>
+      </div>
+    </div>
+
+    <!-- 快捷入口 -->
+    <div class="sec"><h2>常用功能</h2></div>
+    <div class="card">
+      <div class="grid3" style="gap:14px 8px">
+        <a class="center" href="scan.html">
+          <div class="li-ico gold" style="margin:0 auto;width:44px;height:44px;border-radius:14px;font-size:18px">码</div>
+          <div class="tiny" style="margin-top:5px">扫码抽奖</div>
+        </a>
+        <a class="center" href="points-mall.html">
+          <div class="li-ico" style="margin:0 auto;width:44px;height:44px;border-radius:14px;font-size:18px">兑</div>
+          <div class="tiny" style="margin-top:5px">积分商城</div>
+        </a>
+        <a class="center" href="wallet.html">
+          <div class="li-ico red" style="margin:0 auto;width:44px;height:44px;border-radius:14px;font-size:18px">包</div>
+          <div class="tiny" style="margin-top:5px">我的红包</div>
+        </a>
+        <a class="center" href="product.html">
+          <div class="li-ico green" style="margin:0 auto;width:44px;height:44px;border-radius:14px;font-size:18px">品</div>
+          <div class="tiny" style="margin-top:5px">产品中心</div>
+        </a>
+        <a class="center" href="brand.html">
+          <div class="li-ico blue" style="margin:0 auto;width:44px;height:44px;border-radius:14px;font-size:18px">企</div>
+          <div class="tiny" style="margin-top:5px">企业介绍</div>
+        </a>
+        <a class="center" href="promotion.html">
+          <div class="li-ico gold" style="margin:0 auto;width:44px;height:44px;border-radius:14px;font-size:18px">推</div>
+          <div class="tiny" style="margin-top:5px">推广中心</div>
+        </a>
+        <a class="center" href="points.html">
+          <div class="li-ico" style="margin:0 auto;width:44px;height:44px;border-radius:14px;font-size:18px">分</div>
+          <div class="tiny" style="margin-top:5px">我的积分</div>
+        </a>
+        <a class="center" href="store-apply.html">
+          <div class="li-ico gray" style="margin:0 auto;width:44px;height:44px;border-radius:14px;font-size:18px">店</div>
+          <div class="tiny" style="margin-top:5px">门店申请</div>
+        </a>
+        <a class="center" href="my-prizes.html">
+          <div class="li-ico gold" style="margin:0 auto;width:44px;height:44px;border-radius:14px;font-size:18px">奖</div>
+          <div class="tiny" style="margin-top:5px">中奖记录</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 公司动态 -->
+    <div class="sec"><h2>公司动态</h2><a class="more" href="brand.html">全部 ›</a></div>
+    <div class="list">
+      <a class="li" href="news-detail.html">
+        <div class="li-ico gold">新</div>
+        <div class="li-body">
+          <div class="li-t">第 128 场全国私域直播圆满收官</div>
+          <div class="li-s">2026-09-18 · 在线峰值 3.6 万人，签到率 92%</div>
+        </div>
+        <span class="li-x">›</span>
+      </a>
+      <a class="li" href="news-detail.html">
+        <div class="li-ico">荣</div>
+        <div class="li-body">
+          <div class="li-t">湘仁禾获评省级特膳食品标杆企业</div>
+          <div class="li-s">2026-09-05 · 湖南省食品行业协会</div>
+        </div>
+        <span class="li-x">›</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="tabbar" data-tabbar="home"></div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+var u = XRH.user();
+if (!u.bind) {
+  document.getElementById('unbindTip').classList.remove('hide');
+  document.getElementById('liveCard').classList.add('hide');
+  document.querySelector('.nav .nav-sub').textContent = '未绑定推广员 · 仅公开内容';
+  document.getElementById('belong').textContent = '未绑定推广员 · 归属关系待确认';
+} else {
+  document.querySelector('.nav .nav-sub').textContent = '长沙市场 · 已绑定 ' + u.promoter;
+}
+document.getElementById('tk1').onclick = function () { XRH.toast('前往直播间继续观看'); };
+document.getElementById('tk2').onclick = function () { XRH.toast('打开扫码，扫描产品卡片二维码'); };
+</script>
+</body>
+</html>

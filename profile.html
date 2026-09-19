@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>我的 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone hero">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-title="我的" data-action="设置" data-action-href="settings.html"></div>
+
+  <div class="page">
+    <div class="card dark">
+      <div class="row">
+        <div class="avatar gold">李</div>
+        <div class="grow">
+          <div class="h2" style="color:#fff" data-nick>李阿姨</div>
+          <div class="tiny" style="color:rgba(255,255,255,.66);margin-top:3px" id="roleLine">顾客 · 138****7621</div>
+        </div>
+        <a class="btn btn-sm" style="background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.28)" href="settings.html">资料</a>
+      </div>
+      <div class="row" style="margin-top:13px;gap:10px">
+        <a class="grow center" href="points.html" style="color:#fff">
+          <div style="font-size:19px;font-weight:900;color:#E8CE8C" data-points>1260</div>
+          <div class="tiny" style="color:rgba(255,255,255,.6)">积分</div>
+        </a>
+        <a class="grow center" href="wallet.html" style="color:#fff">
+          <div style="font-size:19px;font-weight:900;color:#E8CE8C">¥<span data-balance>38.60</span></div>
+          <div class="tiny" style="color:rgba(255,255,255,.6)">红包</div>
+        </a>
+        <a class="grow center" href="my-prizes.html" style="color:#fff">
+          <div style="font-size:19px;font-weight:900;color:#E8CE8C">6</div>
+          <div class="tiny" style="color:rgba(255,255,255,.6)">奖品</div>
+        </a>
+        <a class="grow center" href="promotion.html" style="color:#fff">
+          <div style="font-size:19px;font-weight:900;color:#E8CE8C">38</div>
+          <div class="tiny" style="color:rgba(255,255,255,.6)">团队</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 演示：角色切换 -->
+    <div class="card" id="demoCard">
+      <div class="row-b" style="margin-bottom:9px">
+        <div class="h3">演示：切换角色视角</div>
+        <span class="badge b-gray">原型专用</span>
+      </div>
+      <div class="chips" id="roleChips">
+        <span class="chip on" data-k="customer">顾客</span>
+        <span class="chip" data-k="promoter">推广员</span>
+        <span class="chip" data-k="store">门店店长</span>
+        <span class="chip" data-k="city">市代</span>
+        <span class="chip" data-k="province">省代</span>
+        <span class="chip" data-k="hq">总部</span>
+      </div>
+      <div class="tiny muted" style="margin-top:9px">切换后，首页与数据看板会按对应角色展示数据与入口（仅影响本机演示数据）。</div>
+    </div>
+
+    <div class="sec"><h2>我的服务</h2></div>
+    <div class="list">
+      <a class="li" href="promotion.html"><div class="li-ico gold">推</div><div class="li-body"><div class="li-t">推广中心</div><div class="li-s">数据看板、我的团队、我的归属、推广码与门店</div></div><span class="li-x">38 人 ›</span></a>
+      <a class="li" href="wallet.html"><div class="li-ico red">包</div><div class="li-body"><div class="li-t">我的红包</div><div class="li-s">看播达标领取，可提现或在 APP 内消费</div></div><span class="li-x">¥38.60 ›</span></a>
+      <a class="li" href="points.html"><div class="li-ico gold">积</div><div class="li-body"><div class="li-t">我的积分</div><div class="li-s">看播 / 扫码 / 中奖获取，积分商城兑换</div></div><span class="li-x" data-points>1260 ›</span></a>
+      <a class="li" href="my-prizes.html"><div class="li-ico purple">奖</div><div class="li-body"><div class="li-t">中奖记录</div><div class="li-s">一物一码抽奖奖品与发货状态</div></div><span class="li-x">›</span></a>
+    </div>
+
+    <div class="sec"><h2>更多</h2></div>
+    <div class="list">
+      <a class="li" href="brand.html"><div class="li-ico gray">企</div><div class="li-body"><div class="li-t">企业介绍</div></div><span class="li-x">›</span></a>
+      <a class="li" href="settings.html"><div class="li-ico gray">设</div><div class="li-body"><div class="li-t">设置与隐私</div></div><span class="li-x">›</span></a>
+      <div class="li" id="cs"><div class="li-ico gray">客</div><div class="li-body"><div class="li-t">联系客服</div><div class="li-s">0731-8888xxxx · 9:00-21:00</div></div><span class="li-x">›</span></div>
+    </div>
+
+    <div class="center tiny muted" style="margin-top:6px">湘仁禾会员 APP v1.0.0（原型演示）</div>
+  </div>
+
+  <div class="tabbar" data-tabbar="profile"></div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+var u = XRH.user();
+document.getElementById('roleLine').textContent = XRH.roleName(u.role) + ' · ' + u.phone;
+
+XRH.chips('#roleChips', true, function (c) {
+  var k = c.getAttribute('data-k');
+  XRH.save({ role: k });
+  document.getElementById('roleLine').textContent = XRH.roleName(k) + ' · ' + u.phone;
+  XRH.toast('已切换为「' + XRH.roleName(k) + '」视角');
+});
+var chips = document.querySelectorAll('#roleChips .chip');
+for (var i = 0; i < chips.length; i++) {
+  chips[i].classList.toggle('on', chips[i].getAttribute('data-k') === u.role);
+}
+
+document.getElementById('cs').onclick = function () {
+  XRH.modal({
+    html:
+      '<div class="modal-hero"><div class="mi">客</div><div class="mt">联系客服</div>' +
+      '<div class="ms">服务时间 9:00-21:00</div></div>' +
+      '<div class="modal-body"><div class="mk">联系方式</div>' +
+      '<ul><li>客服热线：0731-8888xxxx</li><li>门店店长：刘建国 139****0731</li><li>你的推广员：王姐（APP 内消息）</li></ul></div>' +
+      '<div class="modal-foot"><button class="btn" data-close>关闭</button><button class="btn btn-primary" data-close>呼叫客服</button></div>'
+  });
+};
+</script>
+</body>
+</html>

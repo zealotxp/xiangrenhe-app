@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>推广码与邀请 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="promotion.html" data-title="推广码 · 邀请"></div>
+
+  <div class="page">
+    <div class="chips" id="tabs" style="margin-bottom:12px">
+      <span class="chip on" data-k="store">门店推广码</span>
+      <span class="chip" data-k="member">会员注册链接</span>
+    </div>
+
+    <!-- 门店推广码 -->
+    <div data-pane="store">
+      <div class="card dark center">
+        <div class="h3" style="color:#fff">仁和堂健康生活馆（长沙雨花店）</div>
+        <div class="tiny" style="color:rgba(255,255,255,.66);margin-top:3px">店长：刘建国 · 门店编号 XRH-ST-1042</div>
+        <div class="qr" style="margin-top:14px"></div>
+        <div class="tiny" style="color:rgba(255,255,255,.72);margin-top:12px">推广员用 APP 扫此码 → 绑定本店<br>顾客扫推广员链接 → 自动挂到本店名下</div>
+      </div>
+
+      <div class="row" style="gap:9px;margin-bottom:12px">
+        <button class="btn grow btn-gold" id="copy1">复制推广链接</button>
+        <button class="btn grow" id="save1">保存二维码</button>
+      </div>
+
+      <div class="sec"><h2>本店已绑定推广员</h2><span class="more">共 12 人</span></div>
+      <div class="list">
+        <div class="li"><div class="avatar sm gold">王</div><div class="li-body"><div class="li-t">王姐 <span class="badge b-green">已发展 38 位顾客</span></div><div class="li-s">XRH-CS-0287 · 2026-03-11 绑定</div></div><span class="li-x">›</span></div>
+        <div class="li"><div class="avatar sm">李</div><div class="li-body"><div class="li-t">李医生</div><div class="li-s">XRH-CS-0311 · 2026-05-02 绑定</div></div><span class="li-x">26 位 ›</span></div>
+        <div class="li"><div class="avatar sm">周</div><div class="li-body"><div class="li-t">周阿姨</div><div class="li-s">XRH-CS-0358 · 2026-07-19 绑定</div></div><span class="li-x">11 位 ›</span></div>
+      </div>
+
+      <div class="tip green">
+        <span>ⓘ</span>
+        <div>推广权限<b>仅推广员（员工）</b>拥有，且仅<b>一级直推</b>；普通顾客无推广权限。</div>
+      </div>
+    </div>
+
+    <!-- 会员注册链接 -->
+    <div data-pane="member" class="hide">
+      <div class="card gold center">
+        <div class="h3">我的专属会员注册链接</div>
+        <div class="tiny muted" style="margin-top:3px">推广员 王姐 · 工号 XRH-CS-0287</div>
+        <div class="qr big" style="margin-top:14px"></div>
+        <div class="tiny muted" style="margin-top:12px">顾客扫码 / 点开链接完成预注册<br>即自动绑定为你的直属顾客</div>
+      </div>
+
+      <div class="card tight">
+        <div class="row-b">
+          <div class="grow tiny" style="word-break:break-all;color:var(--ink2)">https://vip.xiangrenhe.cn/r/XRH-CS-0287</div>
+          <button class="btn btn-sm btn-gold" id="copy2">复制</button>
+        </div>
+      </div>
+
+      <div class="row" style="gap:9px;margin-bottom:12px">
+        <button class="btn grow btn-primary" id="share">分享到微信</button>
+        <button class="btn grow" id="poster">生成海报</button>
+      </div>
+
+      <div class="sec"><h2>最近通过本链接注册</h2><a class="more" href="my-team.html">我的团队 ›</a></div>
+      <div class="list">
+        <div class="li"><div class="avatar sm">张</div><div class="li-body"><div class="li-t">张叔 <span class="badge b-gray">已看播 2 场</span></div><div class="li-s">2026-09-18 注册 · 归属：王姐</div></div></div>
+        <div class="li"><div class="avatar sm">陈</div><div class="li-body"><div class="li-t">陈阿姨</div><div class="li-s">2026-09-16 注册 · 归属：王姐</div></div></div>
+        <div class="li"><div class="avatar sm">黄</div><div class="li-body"><div class="li-t">黄老师</div><div class="li-s">2026-09-12 注册 · 归属：王姐</div></div></div>
+      </div>
+
+      <div class="tip">
+        <span>ⓘ</span>
+        <div>归属关系在注册时<b>一次性绑定</b>，后续不可随意变更；同一顾客仅归属一个推广员。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+XRH.tabs('#tabs');
+document.getElementById('copy1').onclick = function () { XRH.toast('门店推广链接已复制'); };
+document.getElementById('copy2').onclick = function () { XRH.toast('会员注册链接已复制'); };
+document.getElementById('save1').onclick = function () { XRH.toast('二维码已保存到相册（演示）'); };
+document.getElementById('poster').onclick = function () { XRH.toast('海报生成中…已保存到相册'); };
+document.getElementById('share').onclick = function () {
+  XRH.modal({
+    html:
+      '<div class="modal-hero"><div class="mi">分</div>' +
+      '<div class="mt">分享到微信</div>' +
+      '<div class="ms">链接带有你的推广员工号，顾客注册后自动归到你名下</div></div>' +
+      '<div class="modal-body"><div class="mk">分享方式</div>' +
+      '<ul><li>发送给微信好友 / 微信群</li><li>生成带二维码的朋友圈海报</li><li>面对面扫码：顾客用微信扫一扫即可预注册</li></ul>' +
+      '<div class="tiny muted">注意：顾客直接用微信扫产品卡片上的抽奖码，会提示下载 APP 后再扫</div></div>' +
+      '<div class="modal-foot"><button class="btn" data-close>取消</button><button class="btn btn-primary" data-close>确认分享</button></div>'
+  });
+};
+</script>
+</body>
+</html>

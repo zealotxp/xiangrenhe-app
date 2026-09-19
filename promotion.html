@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>推广中心 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="profile.html" data-title="推广中心" data-sub="分销与团队"></div>
+
+  <div class="page">
+    <div class="card dark">
+      <div class="row-b">
+        <div>
+          <div class="h2" style="color:#fff">推广中心</div>
+          <div class="tiny" style="color:rgba(255,255,255,.66);margin-top:3px">推广员 王姐 · XRH-CS-0287 · 一级直推</div>
+        </div>
+        <span class="badge b-gold">已开通</span>
+      </div>
+      <div class="row" style="margin-top:13px;gap:10px">
+        <div class="grow" style="text-align:center">
+          <div style="font-size:19px;font-weight:900;color:#E8CE8C">38</div>
+          <div class="tiny" style="color:rgba(255,255,255,.6)">直属顾客</div>
+        </div>
+        <div style="width:1px;height:28px;background:rgba(255,255,255,.16)"></div>
+        <div class="grow" style="text-align:center">
+          <div style="font-size:19px;font-weight:900;color:#E8CE8C">¥26万</div>
+          <div class="tiny" style="color:rgba(255,255,255,.6)">本月团队业绩</div>
+        </div>
+        <div style="width:1px;height:28px;background:rgba(255,255,255,.16)"></div>
+        <div class="grow" style="text-align:center">
+          <div style="font-size:19px;font-weight:900;color:#E8CE8C">¥1.86万</div>
+          <div class="tiny" style="color:rgba(255,255,255,.6)">本月收益</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <span>ⓘ</span>
+      <div>推广权限<b>仅推广员（员工）</b>拥有，且<b>仅一级直推</b>；普通顾客无推广权限，页面按角色权限展示对应入口。</div>
+    </div>
+
+    <div class="sec"><h2>数据</h2></div>
+    <div class="list">
+      <a class="li" href="dashboard.html">
+        <div class="li-ico blue">据</div>
+        <div class="li-body"><div class="li-t">数据看板</div><div class="li-s">总部 / 省代 / 市代 / 门店 / 推广员多角色切换</div></div>
+        <span class="li-x">›</span>
+      </a>
+      <a class="li" href="redpacket-config.html">
+        <div class="li-ico red">包</div>
+        <div class="li-body"><div class="li-t">红包配置与收益</div><div class="li-s">市代可设定本市红包金额、充值与补发</div></div>
+        <span class="li-x">›</span>
+      </a>
+    </div>
+
+    <div class="sec"><h2>团队</h2></div>
+    <div class="list">
+      <a class="li" href="my-team.html">
+        <div class="li-ico">队</div>
+        <div class="li-body"><div class="li-t">我的团队</div><div class="li-s">38 位直属顾客 · 看播、扫码、积分情况</div></div>
+        <span class="li-x">38 人 ›</span>
+      </a>
+      <a class="li" href="invite.html">
+        <div class="li-ico gold">码</div>
+        <div class="li-body"><div class="li-t">推广码与邀请</div><div class="li-s">门店推广码、我的会员注册链接</div></div>
+        <span class="li-x">›</span>
+      </a>
+      <a class="li" href="store-apply.html">
+        <div class="li-ico green">店</div>
+        <div class="li-body"><div class="li-t">门店管理</div><div class="li-s">申请门店端口、查看本店推广员与顾客</div></div>
+        <span class="li-x">›</span>
+      </a>
+    </div>
+
+    <div class="sec"><h2>我的归属</h2><a class="more" href="register.html">重新绑定 ›</a></div>
+    <div class="card">
+      <div class="chain" style="gap:4px">
+        <span class="n">顾客 / 推广员（我）</span><span class="ar">›</span>
+        <span class="n">仁和堂·雨花店</span><span class="ar">›</span>
+        <span class="n">长沙市代</span><span class="ar">›</span>
+        <span class="n">湖南省代</span><span class="ar">›</span>
+        <span class="n top">总部</span>
+      </div>
+      <div class="tiny muted" style="margin-top:9px">归属关系在注册时一次性绑定，后续不可随意变更；同一顾客仅归属一个推广员。</div>
+      <div class="tip red hide" id="bindWarn" style="margin:11px 0 0">
+        <span>!</span><div>未绑定推广员，推广与直播入口暂不开放 · <a href="register.html" style="font-weight:800">去绑定</a></div>
+      </div>
+    </div>
+
+    <div class="sec"><h2>推广须知</h2></div>
+    <div class="card">
+      <div class="sm" style="line-height:1.95">
+        · 推广员由<b>扫描门店推广码</b>注册绑定，归属到对应门店<br>
+        · 仅可发展<b>一级直推</b>顾客，不可发展下级推广员<br>
+        · 顾客通过你的链接注册即自动归属，无需人工审核<br>
+        · 顾客看播、扫码、抽奖数据可在团队页实时查看
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+if (!XRH.user().bind) document.getElementById('bindWarn').classList.remove('hide');
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>积分商城 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="mall.html" data-title="积分商城" data-action="我的积分" data-action-href="points.html"></div>
+
+  <div class="page">
+    <div class="card gold center" style="padding:14px">
+      <div class="tiny muted">当前可用积分</div>
+      <div style="font-size:32px;font-weight:900;color:var(--gold)" data-points>1260</div>
+      <div class="tiny muted" style="margin-top:3px">积分仅可兑换本商城商品，不可提现</div>
+    </div>
+
+    <div class="tip red">
+      <span>!</span>
+      <div>商品<b>仅支持积分兑换，不支持现金购买</b>；兑换商品由总部指定，<b>不可兑换主品</b>。</div>
+    </div>
+
+    <div class="scroll-x" id="cats">
+      <span class="chip on">全部</span>
+      <span class="chip">家居日用</span>
+      <span class="chip">粮油食品</span>
+      <span class="chip">健康器械</span>
+      <span class="chip">文创周边</span>
+    </div>
+
+    <div class="goods" style="margin-top:12px">
+      <div class="g-c" data-g="湘仁禾纯棉毛巾礼盒" data-p="800">
+        <div class="ph gold">巾</div>
+        <div class="bd"><div class="gt">湘仁禾纯棉毛巾礼盒</div><div class="gp" style="color:var(--gold)">800 积分</div><div class="tiny muted" style="margin-top:3px">库存 236</div></div>
+      </div>
+      <div class="g-c" data-g="保温养生杯" data-p="1200">
+        <div class="ph gold">杯</div>
+        <div class="bd"><div class="gt">保温养生杯</div><div class="gp" style="color:var(--gold)">1,200 积分</div><div class="tiny muted" style="margin-top:3px">库存 88</div></div>
+      </div>
+      <div class="g-c" data-g="东北五常大米 5kg" data-p="1500">
+        <div class="ph gold">米</div>
+        <div class="bd"><div class="gt">东北五常大米 5kg</div><div class="gp" style="color:var(--gold)">1,500 积分</div><div class="tiny muted" style="margin-top:3px">库存 52</div></div>
+      </div>
+      <div class="g-c" data-g="乳胶护颈枕" data-p="2600">
+        <div class="ph gold">枕</div>
+        <div class="bd"><div class="gt">乳胶护颈枕</div><div class="gp" style="color:var(--gold)">2,600 积分</div><div class="tiny muted" style="margin-top:3px">库存 31</div></div>
+      </div>
+      <div class="g-c" data-g="电子血压计" data-p="4800">
+        <div class="ph gold">压</div>
+        <div class="bd"><div class="gt">电子血压计</div><div class="gp" style="color:var(--gold)">4,800 积分</div><div class="tiny muted" style="margin-top:3px">库存 12</div></div>
+      </div>
+      <div class="g-c" data-g="湘仁禾帆布手提袋" data-p="300">
+        <div class="ph gold">袋</div>
+        <div class="bd"><div class="gt">湘仁禾帆布手提袋</div><div class="gp" style="color:var(--gold)">300 积分</div><div class="tiny muted" style="margin-top:3px">库存 640</div></div>
+      </div>
+    </div>
+
+    <div class="sec"><h2>兑换须知</h2></div>
+    <div class="card">
+      <div class="sm" style="line-height:1.95">
+        · 兑换成功后积分<b>即时扣除</b>，不支持撤销<br>
+        · <b>实物兑换需填写收货地址</b>，由总部统一发货<br>
+        · 发货周期 3-5 个工作日，可在「我的 › 兑换记录」查看物流<br>
+        · 兑换商品由总部指定，主品不可使用积分兑换
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+XRH.chips('#cats', true, function (c) { XRH.toast('已筛选：' + c.textContent); });
+
+var cards = document.querySelectorAll('.g-c');
+for (var i = 0; i < cards.length; i++) {
+  cards[i].addEventListener('click', function () {
+    var name = this.getAttribute('data-g');
+    var need = parseInt(this.getAttribute('data-p'), 10);
+    var u = XRH.user();
+    if (u.points < need) {
+      XRH.modal({
+        html:
+          '<div class="modal-hero red"><div class="mi">积</div>' +
+          '<div class="mt">积分不足</div>' +
+          '<div class="ms">还需 ' + (need - u.points) + ' 积分才能兑换「' + name + '」</div></div>' +
+          '<div class="modal-body"><div class="mk">快速攒积分</div>' +
+          '<ul><li>看直播：有效看播时长达标即得积分</li><li>买产品：每盒一码，按金额 1:1 发放</li><li>抽奖中奖：幸运奖可获额外积分</li></ul></div>' +
+          '<div class="modal-foot"><button class="btn" data-close>知道了</button><a class="btn btn-primary" href="scan.html">去扫码</a></div>'
+      });
+      return;
+    }
+    XRH.modal({
+      html:
+        '<div class="modal-hero"><div class="mi">兑</div>' +
+        '<div class="mt">确认兑换</div>' +
+        '<div class="ms">' + name + ' · 需 ' + need + ' 积分（当前 ' + u.points + '）</div></div>' +
+        '<div class="modal-body"><div class="mk">兑换后</div>' +
+        '<ul><li>剩余积分：' + (u.points - need) + '</li><li>实物商品需填写收货地址，由总部统一发货</li><li>兑换成功后不支持撤销</li></ul></div>' +
+        '<div class="modal-foot"><button class="btn" data-close>再想想</button>' +
+        '<a class="btn btn-primary" href="exchange.html?g=' + encodeURIComponent(name) + '&p=' + need + '">确认兑换</a></div>'
+    });
+  });
+}
+</script>
+</body>
+</html>

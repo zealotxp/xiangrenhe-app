@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>我的奖品 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="home.html" data-title="我的奖品"></div>
+
+  <div class="page">
+    <div class="stats" style="margin-bottom:12px">
+      <div class="stat"><b>9</b><span>累计抽奖</span></div>
+      <div class="stat"><b>6</b><span>中奖</span></div>
+      <div class="stat"><b>1</b><span>待填地址</span></div>
+    </div>
+
+    <div class="chips" id="tabs" style="margin-bottom:12px">
+      <span class="chip on" data-k="all">全部</span>
+      <span class="chip" data-k="todo">待处理</span>
+      <span class="chip" data-k="done">已完成</span>
+    </div>
+
+    <div data-pane="all">
+      <div class="list">
+        <div class="li"><div class="li-ico gold">幸</div><div class="li-body"><div class="li-t">幸运奖 · 50 积分</div><div class="li-s">09-17 14:25 · 已自动到账</div></div><span class="badge b-green">已到账</span></div>
+        <div class="li"><div class="li-ico">3</div><div class="li-body"><div class="li-t">三等奖 · 纯棉毛巾礼盒</div><div class="li-s">09-15 14:36 · 待填写收货地址</div></div><a class="btn btn-sm btn-gold" href="exchange.html?prize=纯棉毛巾礼盒">填地址</a></div>
+        <div class="li"><div class="li-ico gold">幸</div><div class="li-body"><div class="li-t">幸运奖 · 50 积分</div><div class="li-s">09-11 10:11 · 已自动到账</div></div><span class="badge b-green">已到账</span></div>
+        <div class="li"><div class="li-ico gold">2</div><div class="li-body"><div class="li-t">二等奖 · 保温养生杯</div><div class="li-s">09-03 16:50 · 已发货 SF1234567890</div></div><span class="badge b-blue">已发货</span></div>
+        <div class="li"><div class="li-ico gray">空</div><div class="li-body"><div class="li-t">谢谢参与</div><div class="li-s">09-01 09:22 · XRH-C-0077993</div></div><span class="badge b-gray">未中奖</span></div>
+      </div>
+    </div>
+
+    <div data-pane="todo" class="hide">
+      <div class="list">
+        <div class="li"><div class="li-ico">3</div><div class="li-body"><div class="li-t">三等奖 · 纯棉毛巾礼盒</div><div class="li-s">09-15 14:36 · 请在 7 天内填写收货地址</div></div><a class="btn btn-sm btn-gold" href="exchange.html?prize=纯棉毛巾礼盒">填地址</a></div>
+      </div>
+      <div class="tip">
+        <span>ⓘ</span>
+        <div>实物奖品由<b>总部统一发货</b>，奖品成本由总部承担；逾期未填写地址视为放弃。</div>
+      </div>
+    </div>
+
+    <div data-pane="done" class="hide">
+      <div class="list">
+        <div class="li"><div class="li-ico gold">幸</div><div class="li-body"><div class="li-t">幸运奖 · 50 积分</div><div class="li-s">09-17 14:25 · 已自动到账</div></div><span class="badge b-green">已到账</span></div>
+        <div class="li"><div class="li-ico gold">幸</div><div class="li-body"><div class="li-t">幸运奖 · 50 积分</div><div class="li-s">09-11 10:11 · 已自动到账</div></div><span class="badge b-green">已到账</span></div>
+        <div class="li"><div class="li-ico gold">2</div><div class="li-body"><div class="li-t">二等奖 · 保温养生杯</div><div class="li-s">09-03 16:50 · 已发货 SF1234567890</div></div><span class="badge b-blue">已发货</span></div>
+      </div>
+    </div>
+
+    <div class="sec"><h2>抽奖规则</h2></div>
+    <div class="card">
+      <div class="sm" style="line-height:1.95">
+        · 每盒产品对应一张卡片一个码，<b>每码 1 次抽奖机会</b><br>
+        · 奖项：一等奖 / 二等奖 / 三等奖 / 幸运奖<br>
+        · 奖品内容、数量、中奖概率由总部后台配置<br>
+        · <b>实物奖品</b>：填写收货地址，总部统一发货<br>
+        · <b>积分奖品</b>：自动到账积分账户<br>
+        · 奖品成本由总部承担，非门店承担
+      </div>
+    </div>
+
+    <a class="btn btn-block btn-gold" href="scan.html">再扫一盒，继续抽奖</a>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>XRH.tabs('#tabs');</script>
+</body>
+</html>

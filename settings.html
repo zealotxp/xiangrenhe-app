@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>设置 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="profile.html" data-title="设置"></div>
+
+  <div class="page">
+    <div class="sec mt0"><h2>账号与安全</h2></div>
+    <div class="list">
+      <div class="li"><div class="li-ico">手</div><div class="li-body"><div class="li-t">手机号</div><div class="li-s">138****7621</div></div><span class="li-x">更换 ›</span></div>
+      <div class="li"><div class="li-ico green">微</div><div class="li-body"><div class="li-t">微信账号</div><div class="li-s">微信用户_7621 · 已绑定</div></div><span class="badge b-green">已绑定</span></div>
+      <div class="li"><div class="li-ico gray">密</div><div class="li-body"><div class="li-t">登录设备管理</div><div class="li-s">当前 2 台设备登录</div></div><span class="li-x">›</span></div>
+    </div>
+
+    <div class="sec"><h2>消息通知</h2></div>
+    <div class="list">
+      <div class="li"><div class="li-ico red">播</div><div class="li-body"><div class="li-t">开播提醒</div><div class="li-s">直播开始前 15 分钟推送</div></div><span class="check on" data-sw>✓</span></div>
+      <div class="li"><div class="li-ico gold">包</div><div class="li-body"><div class="li-t">红包到账提醒</div></div><span class="check on" data-sw>✓</span></div>
+      <div class="li"><div class="li-ico purple">奖</div><div class="li-body"><div class="li-t">中奖与发货通知</div></div><span class="check on" data-sw>✓</span></div>
+      <div class="li"><div class="li-ico gray">积</div><div class="li-body"><div class="li-t">积分变动提醒</div><div class="li-s">关闭后仅在明细中查看</div></div><span class="check" data-sw></span></div>
+    </div>
+
+    <div class="sec"><h2>隐私与数据</h2></div>
+    <div class="list">
+      <div class="li" id="privacy"><div class="li-ico blue">隐</div><div class="li-body"><div class="li-t">隐私政策</div><div class="li-s">我们收集哪些信息、如何使用</div></div><span class="li-x">›</span></div>
+      <div class="li" id="export"><div class="li-ico gray">导</div><div class="li-body"><div class="li-t">导出我的数据</div><div class="li-s">看播记录、积分、红包、中奖记录</div></div><span class="li-x">申请 ›</span></div>
+      <div class="li" id="del"><div class="li-ico red">删</div><div class="li-body"><div class="li-t">删除我的数据</div><div class="li-s">提交后 7 个工作日内处理，不可恢复</div></div><span class="li-x">›</span></div>
+      <div class="li" id="cache"><div class="li-ico gray">清</div><div class="li-body"><div class="li-t">清除缓存</div><div class="li-s">当前 86.4 MB</div></div><span class="li-x">清理 ›</span></div>
+    </div>
+
+    <div class="sec"><h2>关于</h2></div>
+    <div class="card">
+      <div class="row-b sm" style="padding:6px 0;border-bottom:1px solid var(--line)"><span class="muted">版本</span><span>v1.0.0（原型演示）</span></div>
+      <div class="row-b sm" style="padding:6px 0;border-bottom:1px solid var(--line)"><span class="muted">上架方式</span><span>Android 直接安装，鸿蒙走卓易通</span></div>
+      <div class="row-b sm" style="padding:6px 0"><span class="muted">运营主体</span><span>湖南湘仁禾生物科技有限公司</span></div>
+      <div class="tip" style="margin:11px 0 0">
+        <span>ⓘ</span>
+        <div>Android 无需上架应用市场；<b>iOS 需上架 App Store</b>，存在无法上架或上架后被下架的风险，最坏结果为 iOS 端不可用。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row-b" style="margin-bottom:9px">
+        <div class="h3">演示：切换绑定状态</div>
+        <span class="badge b-gray">原型专用</span>
+      </div>
+      <div class="row" style="gap:9px">
+        <button class="btn grow btn-sm" id="sw1">已绑定推广员</button>
+        <button class="btn grow btn-sm" id="sw0">未绑定（自行注册）</button>
+      </div>
+      <div class="tiny muted" style="margin-top:9px">用于演示「未绑定推广员 → 不显示直播入口」的权限规则。</div>
+    </div>
+
+    <button class="btn btn-block btn-red" id="logout">退出登录</button>
+    <div class="center tiny muted" style="margin-top:8px">退出后可在登录页重新选择归属分支</div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+var sws = document.querySelectorAll('[data-sw]');
+for (var i = 0; i < sws.length; i++) {
+  sws[i].addEventListener('click', function () {
+    this.classList.toggle('on');
+    this.textContent = this.classList.contains('on') ? '✓' : '';
+  });
+}
+
+document.getElementById('privacy').onclick = function () {
+  XRH.modal({
+    html:
+      '<div class="modal-hero"><div class="mi">隐</div><div class="mt">隐私政策摘要</div>' +
+      '<div class="ms">正式版需对接法务确认后的完整文本</div></div>' +
+      '<div class="modal-body"><div class="mk">我们收集</div>' +
+      '<ul><li>微信昵称与头像（用于会员档案）</li><li>手机号（用于账号验证与发货联系）</li><li>看播行为与扫码记录（用于积分与结算）</li></ul>' +
+      '<div class="mk" style="margin-top:10px">你的权利</div>' +
+      '<ul><li>随时导出个人数据</li><li>随时申请删除个人数据</li><li>关闭非必要消息通知</li></ul></div>' +
+      '<div class="modal-foot"><button class="btn btn-primary btn-block" data-close>我已了解</button></div>'
+  });
+};
+
+document.getElementById('export').onclick = function () {
+  XRH.toast('导出申请已提交，处理完成后将发送至你的手机号');
+};
+document.getElementById('del').onclick = function () {
+  XRH.modal({
+    dismissable: false,
+    html:
+      '<div class="modal-hero red"><div class="mi">删</div><div class="mt">确认删除个人数据？</div>' +
+      '<div class="ms">删除后积分、红包、中奖记录与看播记录均不可恢复</div></div>' +
+      '<div class="modal-body"><div class="mk">处理说明</div>' +
+      '<ul><li>提交后 7 个工作日内完成处理</li><li>已发放红包余额将按规则结算后清零</li><li>归属关系同步解除</li></ul></div>' +
+      '<div class="modal-foot"><button class="btn" data-close>取消</button><button class="btn btn-red" id="okd">确认提交</button></div>'
+  });
+  document.getElementById('okd').onclick = function () {
+    document.querySelector('.mask.on').remove();
+    XRH.toast('删除申请已提交（演示环境不真正删除）');
+  };
+};
+document.getElementById('cache').onclick = function () { XRH.toast('缓存已清理'); };
+
+document.getElementById('sw1').onclick = function () {
+  XRH.save({ bind: true, promoter: '王姐' });
+  XRH.toast('已设为「已绑定推广员」，直播入口开放');
+};
+document.getElementById('sw0').onclick = function () {
+  XRH.save({ bind: false, promoter: '未绑定' });
+  XRH.toast('已设为「未绑定」，直播入口将隐藏');
+};
+
+document.getElementById('logout').onclick = function () {
+  XRH.save({ logged: false });
+  XRH.toast('已退出登录');
+  setTimeout(function () { location.href = 'index.html'; }, 700);
+};
+</script>
+</body>
+</html>

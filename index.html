@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>启动登录 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+
+  <div class="welcome">
+    <div class="top">
+      <div class="logo">禾</div>
+      <h1>湘仁禾</h1>
+      <div class="slogan">严选全球优质原料 · 深耕大众健康领域<br>改善记忆力、睡眠与精气神等身体亚健康<br>看直播得红包，买产品攒积分，扫码再抽奖</div>
+    </div>
+
+    <div class="feats">
+      <div class="feat">
+        <div class="fi">播</div>
+        <div><div class="ft">全国私域直播</div><div class="fs">一场直播，全国会员同看；防挂机签到，看播领红包</div></div>
+      </div>
+      <div class="feat">
+        <div class="fi">积</div>
+        <div><div class="ft">积分商城兑换</div><div class="fs">看播、扫码、中奖都能攒积分，兑换总部指定好物</div></div>
+      </div>
+      <div class="feat">
+        <div class="fi">码</div>
+        <div><div class="ft">一物一码抽奖</div><div class="fs">每盒产品配一张抽奖卡，APP 内扫码即得积分并抽奖</div></div>
+      </div>
+    </div>
+
+    <div class="acts">
+      <button class="btn btn-gold btn-block" id="btnWx">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9.2 3.4c-4.3 0-7.8 2.9-7.8 6.5 0 2 1.1 3.9 2.9 5.1l-.7 2.2 2.6-1.3c.9.2 1.9.4 3 .4.4 0 .8 0 1.2-.1a5.3 5.3 0 0 1-.2-1.4c0-3.3 3.2-6 7.1-6h.6c-.6-3.2-3.9-5.4-7.7-5.4zm-2.4 4a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8zm4.8 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/><path d="M22.4 13.3c0-2.8-2.8-5.1-6.2-5.1s-6.2 2.3-6.2 5.1 2.8 5.1 6.2 5.1c.7 0 1.4-.1 2.1-.3l2.2 1.1-.6-1.9c1.5-1 2.5-2.5 2.5-4zM13.8 12a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6zm4.1 0a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6z"/></svg>
+        微信一键登录
+      </button>
+      <button class="btn btn-block btn-ghost" id="btnPhone">手机号验证码登录</button>
+      <div class="row center" style="justify-content:center;font-size:11.5px;color:rgba(255,255,255,.6)">
+        <span class="check on" id="agree" style="width:16px;height:16px;border-radius:5px;font-size:9px">✓</span>
+        <span>已阅读并同意《用户协议》《隐私政策》</span>
+      </div>
+    </div>
+
+    <div class="foot">湖南湘仁禾生物科技有限公司 · 原型演示 v1.0</div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+var bindMode = 1; // 1=通过推广员链接注册（已绑定归属） 0=自行注册（未绑定）
+
+/* 第 1 步：微信授权 */
+function wxAuth() {
+  XRH.modal({
+    html:
+      '<div class="modal-hero">' +
+      '<div class="mi">微</div>' +
+      '<div class="mt">湘仁禾申请使用你的微信身份</div>' +
+      '<div class="ms">获取你的公开信息（昵称、头像），用于建立会员档案</div>' +
+      '</div>' +
+      '<div class="modal-body">' +
+      '<div class="mk">授权后你将获得</div>' +
+      '<ul>' +
+      '<li>微信昵称：微信用户_7621</li>' +
+      '<li>所属门店：仁和堂健康生活馆（长沙雨花店）</li>' +
+      '<li>归属推广员：王姐（工号 XRH-CS-0287）</li>' +
+      '</ul>' +
+      '</div>' +
+      '<div class="modal-foot">' +
+      '<button class="btn" data-close>拒绝</button>' +
+      '<button class="btn btn-primary" data-close id="goPhone">允许</button>' +
+      '</div>'
+  });
+  document.getElementById('goPhone').onclick = function () { setTimeout(phoneStep, 280); };
+}
+
+/* 第 2 步：手机号验证码 */
+function phoneStep() {
+  XRH.modal({
+    dismissable: false,
+    html:
+      '<div class="modal-hero">' +
+      '<div class="mi">验</div>' +
+      '<div class="mt">绑定手机号</div>' +
+      '<div class="ms">微信授权完成，验证手机号后即自动继承预注册归属（推广员 王姐），无需再确认</div>' +
+      '</div>' +
+      '<div class="modal-body">' +
+      '<div class="field"><label>手机号<em>*</em></label>' +
+      '<div class="code-inp"><input class="inp" id="p1" value="138 7621" placeholder="请输入手机号">' +
+      '<button class="code-btn" id="getCode">获取验证码</button></div></div>' +
+      '<div class="field"><label>验证码<em>*</em></label>' +
+      '<input class="inp" id="p2" placeholder="6 位短信验证码" inputmode="numeric"></div>' +
+      '<div class="tiny muted">演示环境：任意 6 位数字即可通过校验</div>' +
+      '</div>' +
+      '<div class="modal-foot">' +
+      '<button class="btn" data-close>取消</button>' +
+      '<button class="btn btn-primary" id="goBind">下一步</button>' +
+      '</div>'
+  });
+  document.getElementById('getCode').onclick = function () {
+    var b = this, n = 60;
+    b.textContent = n + 's 后重发'; b.style.opacity = .6; b.disabled = true;
+    var t = setInterval(function () {
+      n--; b.textContent = n + 's 后重发';
+      if (n <= 0) { clearInterval(t); b.textContent = '重新获取'; b.disabled = false; b.style.opacity = 1; }
+    }, 1000);
+    XRH.toast('验证码已发送至 138****7621');
+  };
+  document.getElementById('goBind').onclick = function () {
+    var v = document.getElementById('p2').value.trim();
+    if (!/^\d{6}$/.test(v)) { XRH.toast('请输入 6 位数字验证码'); return; }
+    var mask = document.querySelector('.mask.on'); if (mask) mask.remove();
+    setTimeout(function () { enter(1); }, 200);
+  };
+}
+
+function enter(b) {
+  XRH.save({ logged: true, bind: b === 1, role: 'customer', nick: '李阿姨', promoter: b ? '王姐' : '未绑定' });
+  XRH.toast(b ? '已自动绑定推广员王姐，欢迎回来' : '未绑定推广员，直播入口暂不开放');
+  setTimeout(function () { location.href = 'home.html'; }, 700);
+}
+
+document.getElementById('btnWx').onclick = wxAuth;
+document.getElementById('btnPhone').onclick = phoneStep;
+document.getElementById('agree').onclick = function () {
+  this.classList.toggle('on');
+  this.textContent = this.classList.contains('on') ? '✓' : '';
+  if (!this.classList.contains('on')) XRH.toast('需先同意用户协议与隐私政策');
+};
+</script>
+</body>
+</html>

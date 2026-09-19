@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>一物一码抽奖 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="scan.html" data-title="幸运抽奖"></div>
+
+  <div class="page">
+    <div class="card gold center">
+      <div class="tiny muted">本次扫码产品</div>
+      <div class="h2" style="margin-top:4px">磷脂酰丝氨酸（PS）复合特膳粉</div>
+      <div class="tiny muted" style="margin-top:3px">改善记忆力方向 · 编码 XRH-C-0092381 · 已到账 <b style="color:var(--gold)">398 积分</b></div>
+      <div class="badge b-gold" style="margin-top:9px">1 次抽奖机会</div>
+    </div>
+
+    <div class="wheel" id="wheel">
+      <div class="needle"></div>
+      <div class="p1">一等奖</div>
+      <div class="p2">二等奖</div>
+      <div class="p3">三等奖</div>
+      <div class="p4">幸运奖</div>
+      <div class="core" id="spin">开始<br>抽奖</div>
+    </div>
+
+    <div class="center tiny muted" style="margin-top:12px">点击中间按钮开始抽奖，每个码仅可抽奖 1 次</div>
+
+    <div class="sec"><h2>奖项配置</h2><span class="more">总部后台配置</span></div>
+    <div class="list">
+      <div class="li"><div class="li-ico red">1</div><div class="li-body"><div class="li-t">一等奖 · 灵芝孢子油礼盒</div><div class="li-s">数量 50 份 · 中奖概率 0.5%</div></div><span class="badge b-gray">实物</span></div>
+      <div class="li"><div class="li-ico gold">2</div><div class="li-body"><div class="li-t">二等奖 · 保温养生杯</div><div class="li-s">数量 300 份 · 中奖概率 3%</div></div><span class="badge b-gray">实物</span></div>
+      <div class="li"><div class="li-ico">3</div><div class="li-body"><div class="li-t">三等奖 · 纯棉毛巾礼盒</div><div class="li-s">数量 1,200 份 · 中奖概率 12%</div></div><span class="badge b-gray">实物</span></div>
+      <div class="li"><div class="li-ico purple">幸</div><div class="li-body"><div class="li-t">幸运奖 · 50 积分</div><div class="li-s">不限量 · 中奖概率 34.5%</div></div><span class="badge b-purple">积分</span></div>
+      <div class="li"><div class="li-ico gray">空</div><div class="li-body"><div class="li-t">谢谢参与</div><div class="li-s">剩余概率</div></div><span class="badge b-gray">无</span></div>
+    </div>
+
+    <div class="tip">
+      <span>ⓘ</span>
+      <div>各等级<b>奖品内容、数量、中奖概率</b>由总部后台配置；<b>奖品成本由总部承担，非门店承担</b>。实物奖品需填写收货地址，由总部统一发货；积分奖品自动到账。</div>
+    </div>
+
+    <a class="btn btn-block" href="my-prizes.html">我的中奖记录</a>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+var spinning = false;
+document.getElementById('spin').onclick = function () {
+  if (spinning) return;
+  spinning = true;
+  var w = document.getElementById('wheel');
+  w.classList.add('spin');
+  XRH.toast('抽奖中…');
+  setTimeout(function () {
+    var r = Math.random();
+    var res;
+    if (r < .20) res = { k: '一等奖', t: '灵芝孢子油礼盒', type: '实物' };
+    else if (r < .45) res = { k: '二等奖', t: '保温养生杯', type: '实物' };
+    else if (r < .72) res = { k: '三等奖', t: '纯棉毛巾礼盒', type: '实物' };
+    else if (r < .90) res = { k: '幸运奖', t: '50 积分', type: '积分' };
+    else res = { k: '谢谢参与', t: '再扫一盒试试', type: '无' };
+
+    if (res.type === '积分') {
+      var u = XRH.user();
+      XRH.save({ points: u.points + 50 });
+    }
+
+    XRH.modal({
+      dismissable: false,
+      html:
+        '<div class="modal-hero ' + (res.type === '无' ? '' : 'gold') + '"><div class="mi">奖</div>' +
+        '<div class="mt">' + (res.type === '无' ? '谢谢参与' : '恭喜中奖') + '</div>' +
+        '<div class="ms">' + res.k + ' · ' + res.t + '</div></div>' +
+        '<div class="modal-body">' +
+        (res.type === '实物' ? '<div class="mk">下一步</div><ul><li>请在 7 天内填写收货地址</li><li>由总部统一发货，奖品成本总部承担</li></ul>'
+          : res.type === '积分' ? '<div class="mk">已到账</div><ul><li>50 积分已自动进入你的积分账户</li><li>可在积分商城兑换指定商品</li></ul>'
+          : '<div class="mk">再来一次</div><ul><li>每个产品码仅可抽奖 1 次</li><li>再买一盒即可获得新的抽奖机会</li></ul>') +
+        '</div>' +
+        '<div class="modal-foot">' +
+        '<button class="btn" data-close>关闭</button>' +
+        (res.type === '实物' ? '<a class="btn btn-primary" href="exchange.html?prize=' + encodeURIComponent(res.t) + '">填写地址</a>'
+          : res.type === '积分' ? '<a class="btn btn-primary" href="points.html">查看积分</a>'
+          : '<a class="btn btn-primary" href="scan.html">继续扫码</a>') +
+        '</div>'
+    });
+    spinning = false;
+  }, 3300);
+};
+</script>
+</body>
+</html>

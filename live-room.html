@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>直播间 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+
+  <!-- 视频区 -->
+  <div class="video" style="flex:none;height:240px">
+    <div class="live-tag"><i></i>直播中</div>
+    <div class="vtitle">第 128 场 · 秋季养生专场</div>
+    <div class="vsub">主讲：湘仁禾健康管理中心 陈主任 · 总部直播间</div>
+    <div class="online">3,218 人在线</div>
+    <div class="host" style="bottom:48px"><span class="av">陈</span>陈主任</div>
+    <a href="live.html" style="position:absolute;right:12px;top:12px;color:#fff;font-size:20px;line-height:1">✕</a>
+    <div style="position:absolute;left:14px;right:14px;bottom:14px">
+      <div class="row-b" style="font-size:11.5px;color:rgba(255,255,255,.85)">
+        <span id="clock">已看播 18:00</span>
+        <span id="signInfo">签到 1/2</span>
+      </div>
+      <div class="bar" style="margin-top:5px;background:rgba(255,255,255,.25)"><i id="prog" style="width:60%;background:#fff"></i></div>
+    </div>
+  </div>
+
+  <div class="nav" data-nav data-title="互动区" style="border-bottom:1px solid var(--line)"></div>
+
+  <div class="page" style="padding:10px 14px">
+    <div class="chips" id="tabs" style="margin-bottom:10px">
+      <span class="chip on" data-k="chat">聊天</span>
+      <span class="chip" data-k="intro">本场介绍</span>
+      <span class="chip" data-k="rank">签到榜</span>
+    </div>
+
+    <div data-pane="chat">
+      <div class="dm" id="dm">
+        <div class="dm-i sys">欢迎来到湘仁禾第 128 场直播，请勿发布与场次无关的广告信息</div>
+        <div class="dm-i"><b>长沙·张叔：</b>陈主任，秋季进补是不是要等霜降后？</div>
+        <div class="dm-i"><b>株洲·李姐：</b>上次讲的益生菌我一直在吃，效果不错</div>
+        <div class="dm-i"><b>湘潭·周阿姨：</b>签到啦签到啦</div>
+        <div class="dm-i sys">系统：敏感词已开启过滤，违规内容将自动屏蔽</div>
+      </div>
+
+      <div class="row" style="gap:9px;margin:12px 0">
+        <button class="btn grow btn-gold" id="btnLucky">直播间抽奖</button>
+        <button class="btn grow" id="btnConn">申请连线</button>
+      </div>
+
+      <div class="card" id="demoCard">
+        <div class="row-b" style="margin-bottom:8px">
+          <div class="h3">演示控制（评审用）</div>
+          <span class="badge b-gray">原型专用</span>
+        </div>
+        <div class="row" style="gap:8px;flex-wrap:wrap">
+          <button class="btn btn-sm" id="dSign">弹出签到</button>
+          <button class="btn btn-sm" id="dTime">+5 分钟</button>
+          <button class="btn btn-sm btn-red" id="dRed">领取红包</button>
+        </div>
+        <div class="tiny muted" style="margin-top:8px">真实逻辑：看播满 30 分钟且完成全部签到 → 才可领取本场红包。</div>
+      </div>
+    </div>
+
+    <div data-pane="intro" class="hide">
+      <div class="card">
+        <div class="h3">秋季养生专场：中老年营养补充</div>
+        <div class="sm muted" style="margin-top:8px;line-height:1.85">
+          本场内容：<br>
+          1. 秋季气候特点与常见不适<br>
+          2. 蛋白质、膳食纤维的合理补充<br>
+          3. 特膳食品与普通食品的区别<br>
+          4. 互动答疑（连线观众 3 位）
+        </div>
+        <div class="tip" style="margin:11px 0 0"><span>ⓘ</span><div>本平台直播<b>不带货、无直播销售功能</b>，如需购买请到线下门店。</div></div>
+      </div>
+      <div class="card">
+        <div class="h3">本场签到安排</div>
+        <div class="tl" style="margin-top:10px">
+          <div class="tl-i done"><div class="tl-t">第 1 次签到 · 19:48</div><div class="tl-s">已完成，计入有效看播时长</div></div>
+          <div class="tl-i now"><div class="tl-t">第 2 次签到 · 20:20（预计）</div><div class="tl-s">倒计时 5-10 秒内需点击确认</div></div>
+          <div class="tl-i"><div class="tl-t">达标发放红包</div><div class="tl-s">看播 30 分钟 + 2 次签到 → 自动进入钱包</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div data-pane="rank" class="hide">
+      <div class="card">
+        <div class="row-b" style="padding:7px 0;border-bottom:1px solid var(--line)">
+          <div class="row"><div class="avatar sm gold">1</div><div><div class="sm" style="font-weight:700">长沙·张叔</div><div class="tiny muted">签到 2/2 · 看播 42 分钟</div></div></div>
+          <span class="badge b-green">已达标</span>
+        </div>
+        <div class="row-b" style="padding:7px 0;border-bottom:1px solid var(--line)">
+          <div class="row"><div class="avatar sm">2</div><div><div class="sm" style="font-weight:700">株洲·李姐</div><div class="tiny muted">签到 2/2 · 看播 38 分钟</div></div></div>
+          <span class="badge b-green">已达标</span>
+        </div>
+        <div class="row-b" style="padding:7px 0;border-bottom:1px solid var(--line)">
+          <div class="row"><div class="avatar sm">3</div><div><div class="sm" style="font-weight:700">我（李阿姨）</div><div class="tiny muted">签到 1/2 · 看播 <span id="rkMin">18</span> 分钟</div></div></div>
+          <span class="badge b-gray">进行中</span>
+        </div>
+        <div class="row-b" style="padding:7px 0">
+          <div class="row"><div class="avatar sm">4</div><div><div class="sm" style="font-weight:700">衡阳·黄老师</div><div class="tiny muted">签到 0/2 · 看播 6 分钟</div></div></div>
+          <span class="badge b-red">未签到</span>
+        </div>
+      </div>
+      <div class="tip red"><span>!</span><div>未完成签到的用户<b>不计入有效看播时长</b>，不触发红包发放。</div></div>
+    </div>
+  </div>
+
+  <div class="composer">
+    <input class="box" id="msg" placeholder="和大家聊聊天…">
+    <button class="send" id="send">↑</button>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+XRH.tabs('#tabs');
+
+var minutes = 18, seconds = 0, signed = 1, gotRed = false;
+
+function paint() {
+  document.getElementById('clock').textContent = '已看播 ' + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+  document.getElementById('rkMin').textContent = minutes;
+  document.getElementById('signInfo').textContent = '签到 ' + signed + '/2';
+  var p = Math.min(100, Math.round(minutes / 30 * 100));
+  document.getElementById('prog').style.width = p + '%';
+}
+
+setInterval(function () {
+  seconds++;
+  if (seconds >= 60) { seconds = 0; minutes++; }
+  paint();
+}, 1000);
+
+/* 防挂机签到 */
+function signPopup() {
+  if (signed >= 2) { XRH.toast('本场签到已完成'); return; }
+  var left = 8;
+  var m = XRH.modal({
+    dismissable: false,
+    html:
+      '<div class="modal-hero red"><div class="mi">签</div>' +
+      '<div class="mt">防挂机签到</div>' +
+      '<div class="ms">请在倒计时结束前点击确认，否则本段时长不计入有效看播</div></div>' +
+      '<div class="modal-body center">' +
+      '<div id="cd" style="font-size:40px;font-weight:900;color:var(--red);letter-spacing:1px">8</div>' +
+      '<div class="tiny muted">秒后本轮签到失效</div>' +
+      '</div>' +
+      '<div class="modal-foot"><button class="btn btn-red btn-block" id="ok">立即签到</button></div>'
+  });
+  var cd = document.getElementById('cd');
+  var t = setInterval(function () {
+    left--; cd.textContent = left;
+    if (left <= 0) {
+      clearInterval(t);
+      m.close();
+      XRH.toast('本轮签到已超时，该时段不计入有效看播时长', 2400);
+    }
+  }, 1000);
+  document.getElementById('ok').onclick = function () {
+    clearInterval(t); signed = 2; paint(); m.close();
+    XRH.toast('签到成功 2/2');
+  };
+}
+
+/* 红包 */
+function redPacket() {
+  if (gotRed) { XRH.toast('本场红包已领取'); return; }
+  if (minutes < 30 || signed < 2) {
+    XRH.toast('还需看播 ' + Math.max(0, 30 - minutes) + ' 分钟、签到 ' + (2 - signed) + ' 次');
+    return;
+  }
+  gotRed = true;
+  var m = XRH.modal({
+    dismissable: false,
+    html:
+      '<div class="rp"><div class="top">' +
+      '<div class="lb">看播红包 · 长沙市场</div>' +
+      '<div class="amt"><i>¥</i>2.00</div>' +
+      '<div class="lb">累计看播 30 分钟 + 签到 2/2 已达标</div>' +
+      '</div><div class="btm">' +
+      '<div class="tiny muted" style="margin-bottom:10px">红包已存入钱包，可申请提现或在 APP 内消费</div>' +
+      '<button class="btn btn-red" id="take">存入我的钱包</button>' +
+      '<button class="btn btn-block" style="margin-top:8px;border:0;color:var(--ink3)" data-close>稍后再看</button>' +
+      '</div></div>'
+  });
+  document.getElementById('take').onclick = function () {
+    var u = XRH.user();
+    XRH.save({ balance: +(u.balance + 2).toFixed(2) });
+    m.close();
+    XRH.toast('¥2.00 已存入钱包');
+    setTimeout(function () { location.href = 'wallet.html'; }, 900);
+  };
+}
+
+document.getElementById('dSign').onclick = signPopup;
+document.getElementById('dTime').onclick = function () { minutes += 5; paint(); XRH.toast('演示：看播时长 +5 分钟'); };
+document.getElementById('dRed').onclick = redPacket;
+
+document.getElementById('btnLucky').onclick = function () {
+  var win = Math.random() > .5;
+  XRH.modal({
+    html:
+      '<div class="modal-hero gold"><div class="mi">奖</div>' +
+      '<div class="mt">直播间抽奖</div>' +
+      '<div class="ms">本轮奖品：湘仁禾益生菌体验装 20 份</div></div>' +
+      '<div class="modal-body center">' +
+      (win ? '<div style="font-size:30px">🎉</div><div class="h2" style="margin-top:6px">恭喜中奖</div><div class="tiny muted">益生菌体验装 1 份，请在 24 小时内填写收货地址</div>'
+           : '<div class="h2">谢谢参与</div><div class="tiny muted">本轮奖品已抽完，下一轮 5 分钟后开始</div>') +
+      '</div>' +
+      '<div class="modal-foot"><button class="btn" data-close>关闭</button>' +
+      (win ? '<a class="btn btn-primary" href="exchange.html">填写收货地址</a>' : '<button class="btn btn-primary" data-close>继续看播</button>') +
+      '</div>'
+  });
+};
+
+document.getElementById('btnConn').onclick = function () {
+  XRH.modal({
+    html:
+      '<div class="modal-hero"><div class="mi">连</div>' +
+      '<div class="mt">申请与主播连线</div>' +
+      '<div class="ms">当前排队 4 人，预计等待 3 分钟</div></div>' +
+      '<div class="modal-body"><div class="mk">连线须知</div>' +
+      '<ul><li>连线为语音连麦，请注意环境安静</li><li>敏感词实时过滤，违规将被中断</li><li>主播有权随时结束连线</li></ul></div>' +
+      '<div class="modal-foot"><button class="btn" data-close>取消</button><button class="btn btn-primary" data-close>确认排队</button></div>'
+  });
+  XRH.toast('已加入连线排队');
+};
+
+function send() {
+  var v = document.getElementById('msg').value.trim();
+  if (!v) return;
+  var d = document.createElement('div');
+  d.className = 'dm-i me';
+  d.innerHTML = '<b>我：</b>' + v.replace(/</g, '&lt;');
+  document.getElementById('dm').appendChild(d);
+  document.getElementById('msg').value = '';
+  var box = document.querySelector('.page');
+  box.scrollTop = box.scrollHeight;
+}
+document.getElementById('send').onclick = send;
+document.getElementById('msg').onkeydown = function (e) { if (e.key === 'Enter') send(); };
+
+paint();
+setTimeout(signPopup, 6000);
+</script>
+</body>
+</html>

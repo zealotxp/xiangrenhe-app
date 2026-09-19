@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>直播 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-title="直播" data-sub="全国统一直播 · 不带货"></div>
+
+  <div class="page">
+    <!-- 未绑定推广员：不显示直播入口 -->
+    <div class="hide" id="noBind">
+      <div class="empty">
+        <div class="ei">◉</div>
+        <p><b>直播入口未开放</b></p>
+        <p class="tiny">必须绑定推广员归属后，APP 才会显示直播入口。<br>当前账号为自行注册，未绑定推广员。</p>
+      </div>
+      <a class="btn btn-block btn-primary" href="register.html" style="margin:0 16px 10px;width:auto">通过推广员链接绑定</a>
+      <a class="btn btn-block" href="brand.html" style="margin:0 16px;width:auto">先看看企业介绍</a>
+      <div class="tip" style="margin:16px">
+        <span>ⓘ</span>
+        <div>规则来源：直播观看权限 —— 自行注册未绑定推广员的用户，APP 中不显示直播入口，仅能查看企业介绍等公开内容。</div>
+      </div>
+    </div>
+
+    <div id="liveMain">
+      <!-- 我的看播数据 -->
+      <div class="card gold">
+        <div class="row-b">
+          <div>
+            <div class="sm" style="font-weight:800">本月看播</div>
+            <div class="tiny muted">累计 12 小时 36 分 · 已完成 16 场</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:20px;font-weight:900;color:var(--red)">¥126.00</div>
+            <div class="tiny muted">累计红包</div>
+          </div>
+        </div>
+        <div class="bar red" style="margin-top:10px"><i style="width:60%"></i></div>
+        <div class="tiny muted" style="margin-top:6px">今日看播 18 分钟 / 达标 30 分钟 · 本场签到 1/2 次</div>
+      </div>
+
+      <div class="chips" id="tabs" style="margin-bottom:12px">
+        <span class="chip on" data-k="now">直播中</span>
+        <span class="chip" data-k="soon">预告</span>
+        <span class="chip" data-k="back">录播回放</span>
+      </div>
+
+      <!-- 直播中 -->
+      <div data-pane="now">
+        <a class="card" href="live-room.html" style="padding:0;overflow:hidden">
+          <div class="video" style="height:150px">
+            <div class="live-tag"><i></i>直播中</div>
+            <div class="vtitle">第 128 场 · 秋季养生专场</div>
+            <div class="vsub">主讲：湘仁禾健康管理中心 陈主任</div>
+            <div class="online">3,218 人在线</div>
+            <div class="host"><span class="av">陈</span>陈主任 · 总部直播间</div>
+          </div>
+          <div style="padding:11px 13px">
+            <div class="row-b">
+              <div class="h3">秋季养生专场：中老年营养补充</div>
+              <span class="badge b-red">进行中</span>
+            </div>
+            <div class="tiny muted" style="margin-top:4px">19:30 开播 · 预计 21:00 结束 · 本场 2 次防挂机签到</div>
+            <div class="row" style="margin-top:9px;gap:6px">
+              <span class="badge b-gold">看播 30 分钟领红包</span>
+              <span class="badge b-gray">签到 2 次</span>
+            </div>
+          </div>
+        </a>
+        <div class="tip red">
+          <span>!</span>
+          <div>直播中会在随机时段弹出<b>防挂机签到</b>，倒计时 5-10 秒内需点击确认；未完成签到不计入有效看播时长，不触发红包发放。</div>
+        </div>
+      </div>
+
+      <!-- 预告 -->
+      <div data-pane="soon" class="hide">
+        <div class="card">
+          <div class="row-b">
+            <div>
+              <div class="h3">第 129 场 · 冬季进补专场</div>
+              <div class="tiny muted" style="margin-top:3px">09-22 19:30 · 主讲：陈主任（总部）</div>
+            </div>
+            <button class="btn btn-sm btn-gold" onclick="XRH.toast('已设置开播提醒')">提醒我</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="row-b">
+            <div>
+              <div class="h3">第 130 场 · 中老年睡眠管理</div>
+              <div class="tiny muted" style="margin-top:3px">09-25 19:30 · 主讲：湘雅社区卫生服务中心 李医生</div>
+            </div>
+            <button class="btn btn-sm btn-gold" onclick="XRH.toast('已设置开播提醒')">提醒我</button>
+          </div>
+        </div>
+        <div class="tip">
+          <span>ⓘ</span>
+          <div>全国统一直播，所有地区顾客同时观看同一场；经总部申请批准后，市代 / 店长也可单独开播。</div>
+        </div>
+        <button class="btn btn-block" onclick="XRH.toast('开播申请已提交，等待总部审批')">我是市代 / 店长，申请单独开播</button>
+      </div>
+
+      <!-- 录播回放 -->
+      <div data-pane="back" class="hide">
+        <a class="card" href="live-replay.html" style="padding:0;overflow:hidden">
+          <div class="video" style="height:118px;background:linear-gradient(160deg,#2A3B44,#3E5761)">
+            <div class="live-tag" style="background:rgba(0,0,0,.45)">回放</div>
+            <div class="vtitle">第 127 场 · 免疫与肠道健康</div>
+            <div class="vsub">原直播 09-15 19:30 · 时长 92 分钟</div>
+          </div>
+          <div style="padding:10px 13px">
+            <div class="row-b"><div class="h3">免疫与肠道健康</div><span class="tiny muted">1.2 万次播放</span></div>
+            <div class="tiny muted" style="margin-top:3px">回放同样计入看播时长与积分（后台可配置）</div>
+          </div>
+        </a>
+        <div class="card">
+          <div class="row-b"><div class="h3">第 126 场 · 三高人群饮食指南</div><span class="tiny muted">8,642 次</span></div>
+          <div class="tiny muted" style="margin-top:3px">原直播 09-11 · 时长 78 分钟</div>
+        </div>
+        <div class="card">
+          <div class="row-b"><div class="h3">第 125 场 · 秋季养肺食疗方</div><span class="tiny muted">1.5 万次</span></div>
+          <div class="tiny muted" style="margin-top:3px">原直播 09-08 · 时长 86 分钟</div>
+        </div>
+      </div>
+
+      <!-- 互动功能 -->
+      <div class="sec"><h2>直播互动能力</h2></div>
+      <div class="list">
+        <div class="li"><div class="li-ico gold">奖</div><div class="li-body"><div class="li-t">直播间抽奖</div><div class="li-s">主播发起，观众一键参与，中奖结果实时公布</div></div></div>
+        <div class="li"><div class="li-ico blue">连</div><div class="li-body"><div class="li-t">观众与主播连线</div><div class="li-s">申请排队上麦，主播确认后语音连线</div></div></div>
+        <div class="li"><div class="li-ico green">颜</div><div class="li-body"><div class="li-t">美颜 / 虚拟背景抠图</div><div class="li-s">主播端能力，由第三方直播平台提供</div></div></div>
+        <div class="li"><div class="li-ico gray">敏</div><div class="li-body"><div class="li-t">敏感词过滤</div><div class="li-s">敏感词库后台可配置，聊天自动拦截</div></div></div>
+      </div>
+
+      <div class="sec"><h2>红包规则</h2><a class="more" href="wallet.html">我的红包 ›</a></div>
+      <div class="card">
+        <div class="sm" style="line-height:1.9">
+          · <b>触发条件</b>：累计看播达 30 分钟且完成全部签到<br>
+          · <b>金额设定</b>：按所属市场（市）独立设定，各市代自行配置<br>
+          · <b>资金来源</b>：各市代预充值到市场红包账户，发放时扣除<br>
+          · <b>余额不足</b>：支持扣至负数，后续充值自动抵扣，并支持补发<br>
+          · <b>红包使用</b>：进入钱包，可申请提现，也可在 APP 内消费
+        </div>
+        <a class="btn btn-block btn-gold" href="redpacket-config.html" style="margin-top:11px">我是市代，配置本市红包</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabbar" data-tabbar="live"></div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+XRH.tabs('#tabs');
+if (!XRH.user().bind) {
+  document.getElementById('liveMain').classList.add('hide');
+  document.getElementById('noBind').classList.remove('hide');
+  document.querySelector('.nav .nav-sub').textContent = '直播入口未开放';
+}
+</script>
+</body>
+</html>
