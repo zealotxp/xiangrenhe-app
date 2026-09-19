@@ -22,21 +22,14 @@
       <input class="inp" id="kw" placeholder="搜索顾客昵称 / 手机号" style="width:100%;border:1px solid var(--line);border-radius:12px;background:#FBFCFB;padding:10px 12px;font-size:13.5px">
     </div>
 
-    <div class="scroll-x" id="flt">
-      <span class="chip on">全部 38</span>
-      <span class="chip">已看播 30</span>
-      <span class="chip">未看播 8</span>
-      <span class="chip">已购产品 26</span>
-    </div>
-
     <div class="sec"><h2>顾客列表</h2><span class="more">归属：王姐 › 仁和堂·雨花店</span></div>
     <div class="list" id="team">
-      <div class="li" data-n="张叔"><div class="avatar sm">张</div><div class="li-body"><div class="li-t">张叔 <span class="badge b-green">已达标</span></div><div class="li-s">138****2231 · 看播 42 分钟 · 积分 1,860</div></div><span class="li-x">›</span></div>
-      <div class="li" data-n="陈阿姨"><div class="avatar sm">陈</div><div class="li-body"><div class="li-t">陈阿姨 <span class="badge b-green">已达标</span></div><div class="li-s">139****7788 · 看播 36 分钟 · 积分 960</div></div><span class="li-x">›</span></div>
-      <div class="li" data-n="黄老师"><div class="avatar sm">黄</div><div class="li-body"><div class="li-t">黄老师 <span class="badge b-gray">未达标</span></div><div class="li-s">137****0092 · 看播 6 分钟 · 积分 320</div></div><span class="li-x">›</span></div>
-      <div class="li" data-n="刘伯伯"><div class="avatar sm">刘</div><div class="li-body"><div class="li-t">刘伯伯 <span class="badge b-gold">已购产品</span></div><div class="li-s">135****4410 · 扫码 6 盒 · 积分 2,388</div></div><span class="li-x">›</span></div>
-      <div class="li" data-n="周阿姨"><div class="avatar sm">周</div><div class="li-body"><div class="li-t">周阿姨 <span class="badge b-green">已达标</span></div><div class="li-s">186****3320 · 看播 51 分钟 · 积分 1,240</div></div><span class="li-x">›</span></div>
-      <div class="li" data-n="吴奶奶"><div class="avatar sm">吴</div><div class="li-body"><div class="li-t">吴奶奶 <span class="badge b-red">未签到</span></div><div class="li-s">158****6677 · 看播 12 分钟 · 积分 480</div></div><span class="li-x">›</span></div>
+      <div class="li" data-n="张叔"><div class="avatar sm">张</div><div class="li-body"><div class="li-t">张叔</div><div class="li-s">138****2231</div></div><span class="li-x">›</span></div>
+      <div class="li" data-n="陈阿姨"><div class="avatar sm">陈</div><div class="li-body"><div class="li-t">陈阿姨</div><div class="li-s">139****7788</div></div><span class="li-x">›</span></div>
+      <div class="li" data-n="黄老师"><div class="avatar sm">黄</div><div class="li-body"><div class="li-t">黄老师</div><div class="li-s">137****0092</div></div><span class="li-x">›</span></div>
+      <div class="li" data-n="刘伯伯"><div class="avatar sm">刘</div><div class="li-body"><div class="li-t">刘伯伯</div><div class="li-s">135****4410</div></div><span class="li-x">›</span></div>
+      <div class="li" data-n="周阿姨"><div class="avatar sm">周</div><div class="li-body"><div class="li-t">周阿姨</div><div class="li-s">186****3320</div></div><span class="li-x">›</span></div>
+      <div class="li" data-n="吴奶奶"><div class="avatar sm">吴</div><div class="li-body"><div class="li-t">吴奶奶</div><div class="li-s">158****6677</div></div><span class="li-x">›</span></div>
     </div>
 
     <div class="tip">
@@ -50,8 +43,6 @@
 
 <script src="assets/app.js"></script>
 <script>
-XRH.chips('#flt', true, function (c) { XRH.toast('已筛选：' + c.textContent); });
-
 var rows = document.querySelectorAll('#team .li');
 for (var i = 0; i < rows.length; i++) {
   rows[i].addEventListener('click', function () {
