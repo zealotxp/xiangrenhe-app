@@ -40,22 +40,9 @@
       <a class="li" href="news-detail.html"><div class="li-ico green">产</div><div class="li-body"><div class="li-t">改善睡眠系列新品（GABA 酸枣仁）上市</div><div class="li-s">2026-09-10</div></div><span class="li-x">›</span></a>
       <a class="li" href="news-detail.html"><div class="li-ico">渠</div><div class="li-body"><div class="li-t">门店申请通道开放</div><div class="li-s">2026-09-05</div></div><span class="li-x">›</span></a>
     </div>
-
-    <div class="row" style="gap:9px">
-      <button class="btn grow" id="like">👍 有用 236</button>
-      <button class="btn grow" onclick="XRH.toast('分享面板已打开（演示）')">分享给朋友</button>
-    </div>
   </div>
 </div>
 
 <script src="assets/app.js"></script>
-<script>
-var liked = false;
-document.getElementById('like').onclick = function () {
-  liked = !liked;
-  this.textContent = (liked ? '👍 已点赞 237' : '👍 有用 236');
-  XRH.toast(liked ? '已点赞' : '已取消点赞');
-};
-</script>
 </body>
 </html>
