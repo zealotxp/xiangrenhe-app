@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>公司新闻 · 湘仁禾私域会员APP</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar" data-statusbar></div>
+  <div class="nav" data-nav data-back="home.html" data-title="公司新闻"></div>
+
+  <div class="page gray">
+
+    <!-- 分类筛选 -->
+    <div class="scroll-x" style="margin:2px 0 12px">
+      <div class="chips" id="cats">
+        <span class="chip on" data-k="all">全部</span>
+        <span class="chip" data-k="dyn">企业动态</span>
+        <span class="chip" data-k="live">直播回顾</span>
+        <span class="chip" data-k="ind">行业资讯</span>
+        <span class="chip" data-k="hon">荣誉资质</span>
+      </div>
+    </div>
+
+    <!-- 头条 -->
+    <a class="news-hd" href="news-detail.html" data-cat="live">
+      <span class="bg"></span>
+      <span class="tp">置顶</span>
+      <div class="in">
+        <div class="nt">第 128 场全国私域直播圆满收官，在线峰值 3.6 万人</div>
+        <div class="nm"><span>总部品牌部</span><span>2026-09-18</span><span>阅读 1.2 万</span></div>
+      </div>
+    </a>
+
+    <!-- 新闻列表 -->
+    <div class="list" id="newsList">
+      <a class="news" href="news-detail.html" data-cat="dyn">
+        <div class="nph">产</div>
+        <div class="nb">
+          <div class="nt">改善睡眠系列新品（GABA 酸枣仁）上市</div>
+          <div class="nm"><span class="nbadge">企业动态</span><span>2026-09-10</span><span>阅读 8,620</span></div>
+        </div>
+      </a>
+      <a class="news" href="news-detail.html" data-cat="hon">
+        <div class="nph gold">荣</div>
+        <div class="nb">
+          <div class="nt">湘仁禾获评省级特膳食品标杆企业</div>
+          <div class="nm"><span class="nbadge gold">荣誉资质</span><span>2026-09-05</span><span>阅读 6,410</span></div>
+        </div>
+      </a>
+      <a class="news" href="news-detail.html" data-cat="dyn">
+        <div class="nph blue">渠</div>
+        <div class="nb">
+          <div class="nt">门店申请通道开放，实体与虚拟门店均可提交</div>
+          <div class="nm"><span class="nbadge blue">企业动态</span><span>2026-09-05</span><span>阅读 5,180</span></div>
+        </div>
+      </a>
+      <a class="news" href="news-detail.html" data-cat="dyn">
+        <div class="nph">产</div>
+        <div class="nb">
+          <div class="nt">PS 复合特膳粉新增 3 条自动化产线，一物一码追溯全覆盖</div>
+          <div class="nm"><span class="nbadge">企业动态</span><span>2026-08-27</span><span>阅读 4,730</span></div>
+        </div>
+      </a>
+      <a class="news" href="news-detail.html" data-cat="live">
+        <div class="nph red">播</div>
+        <div class="nb">
+          <div class="nt">秋季养生专场直播回顾：签到率 92%，红包发放 1.1 万份</div>
+          <div class="nm"><span class="nbadge red">直播回顾</span><span>2026-09-18</span><span>阅读 9,340</span></div>
+        </div>
+      </a>
+      <a class="news" href="news-detail.html" data-cat="live">
+        <div class="nph red">预</div>
+        <div class="nb">
+          <div class="nt">冬季进补专场定档 9 月 22 日 19:30，长沙市代独立开播</div>
+          <div class="nm"><span class="nbadge red">直播回顾</span><span>2026-09-16</span><span>阅读 7,050</span></div>
+        </div>
+      </a>
+      <a class="news" href="news-detail.html" data-cat="ind">
+        <div class="nph gray">规</div>
+        <div class="nb">
+          <div class="nt">特膳食品行业新规解读：标签与功效宣称的合规边界</div>
+          <div class="nm"><span class="nbadge">行业资讯</span><span>2026-08-15</span><span>阅读 3,920</span></div>
+        </div>
+      </a>
+      <a class="news" href="news-detail.html" data-cat="ind">
+        <div class="nph gray">养</div>
+        <div class="nb">
+          <div class="nt">中老年营养补充的三个常见误区，你踩过几个</div>
+          <div class="nm"><span class="nbadge">行业资讯</span><span>2026-08-02</span><span>阅读 1.1 万</span></div>
+        </div>
+      </a>
+      <a class="news" href="news-detail.html" data-cat="hon">
+        <div class="nph gold">证</div>
+        <div class="nb">
+          <div class="nt">公司通过 ISO9001 质量管理体系年度复审</div>
+          <div class="nm"><span class="nbadge gold">荣誉资质</span><span>2026-07-20</span><span>阅读 2,860</span></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="empty hide" id="emptyBox">
+      <div class="ei">◍</div>
+      <p>该分类下暂无新闻</p>
+    </div>
+
+    <a class="btn btn-block btn-primary" id="moreBtn" style="margin-top:4px">加载更多</a>
+
+    <div class="tip blue" style="margin-top:12px">
+      <span>i</span>
+      <div class="grow">新闻内容由总部后台统一发布，APP 端按分类与发布时间展示；置顶新闻由后台手动设置。</div>
+    </div>
+
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+var items = document.querySelectorAll('#newsList .news');
+var head = document.querySelector('.news-hd');
+var emptyBox = document.getElementById('emptyBox');
+
+document.getElementById('cats').addEventListener('click', function (e) {
+  var chip = e.target.closest('.chip');
+  if (!chip) return;
+  var sib = this.querySelectorAll('.chip');
+  for (var i = 0; i < sib.length; i++) sib[i].classList.remove('on');
+  chip.classList.add('on');
+
+  var k = chip.getAttribute('data-k');
+  var n = 0;
+  for (var j = 0; j < items.length; j++) {
+    var show = (k === 'all' || items[j].getAttribute('data-cat') === k);
+    items[j].classList.toggle('hide', !show);
+    if (show) n++;
+  }
+  head.classList.toggle('hide', !(k === 'all' || head.getAttribute('data-cat') === k));
+  if (k !== 'all' && k === head.getAttribute('data-cat')) n++;
+  document.getElementById('newsList').classList.toggle('hide', n === 0);
+  emptyBox.classList.toggle('hide', n !== 0);
+  document.getElementById('moreBtn').classList.toggle('hide', n === 0);
+});
+
+document.getElementById('moreBtn').onclick = function () { XRH.toast('已加载全部新闻'); };
+</script>
+</body>
+</html>

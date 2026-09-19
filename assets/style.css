@@ -126,6 +126,46 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .grow{flex:1;min-width:0}
 .nowrap{white-space:nowrap}
 
+/* ---------- 新闻列表 ---------- */
+.news{display:flex;gap:11px;padding:12px 13px;border-bottom:1px solid var(--line);transition:.14s}
+.news:last-child{border-bottom:0}
+.news:active{background:#F7F9F8}
+.news .nph{
+  width:88px;height:64px;flex:none;border-radius:10px;display:grid;place-items:center;
+  font-size:17px;font-weight:800;color:#fff;background:linear-gradient(150deg,#1E6B52,#12463A);
+}
+.news .nph.gold{background:linear-gradient(150deg,#C89A34,#8A6416)}
+.news .nph.red{background:linear-gradient(150deg,#D0433A,#8E2019)}
+.news .nph.blue{background:linear-gradient(150deg,#4B82DA,#2F56A6)}
+.news .nph.gray{background:linear-gradient(150deg,#8FA09A,#5E6E68)}
+.news .nb{flex:1;min-width:0}
+.news .nt{
+  font-size:13.5px;font-weight:700;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.news .nm{font-size:11.5px;color:var(--ink3);margin-top:7px;display:flex;align-items:center;gap:8px}
+.news .nbadge{
+  display:inline-block;font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:6px;
+  background:#EAF4EF;color:#14614A;flex:none;
+}
+.news .nbadge.gold{background:var(--soft);color:#8A6416}
+.news .nbadge.red{background:#FDECEB;color:#B4443C}
+.news .nbadge.blue{background:#EDF3FE;color:#31548F}
+
+/* 头条卡 */
+.news-hd{
+  display:block;position:relative;height:158px;border-radius:14px;overflow:hidden;
+  margin-bottom:12px;color:#fff;box-shadow:var(--shadow);
+}
+.news-hd .bg{position:absolute;inset:0;background:linear-gradient(140deg,#0E3A2F,#2A7A5C)}
+.news-hd .in{position:absolute;left:14px;right:14px;bottom:14px}
+.news-hd .nt{font-size:16px;font-weight:800;line-height:1.45;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.news-hd .nm{font-size:11.5px;color:rgba(255,255,255,.78);margin-top:7px;display:flex;gap:8px;align-items:center}
+.news-hd .tp{
+  position:absolute;top:12px;left:12px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;padding:2px 9px;font-size:11px;font-weight:700;
+}
+
 /* ---------- 搜索条（商城首页） ---------- */
 .searchbar{
   display:flex;align-items:center;gap:8px;height:38px;border-radius:12px;
